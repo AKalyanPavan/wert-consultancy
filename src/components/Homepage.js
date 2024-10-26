@@ -3,7 +3,7 @@ import logo from './../images/logo.svg';
 function Homepage() {
 	return(
 		<>
-			<div className="sticky top-[0px] bg-[#feffcd]">
+			<div className="sticky top-[0px] bg-[#f4f5c3]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
@@ -22,7 +22,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="font-['Lexend'] bg-[#feffcd] text-[#082d60] rounded-b-[40px]">
+			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] rounded-b-[40px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[200px]">
 					<div className="max-w-[900px]">
 						<div className="font-medium sm:text-[48px] text-[32px]">
