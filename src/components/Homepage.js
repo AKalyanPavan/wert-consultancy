@@ -1,9 +1,19 @@
 import logo from './../images/logo.svg';
 
 function Homepage() {
+
+	document.addEventListener('scroll', () => {
+	    let header = document.getElementById("header");
+	    if (window.scrollY > 20) {
+	    	header.style.boxShadow = "0 0 15px -1px #00000014";
+	    } else {
+	    	header.style.boxShadow = "";
+	    }
+	});
+
 	return(
 		<>
-			<div className="sticky top-[0px] bg-[#f4f5c3]">
+			<div id="header" className="sticky top-[0px] bg-[#f4f5c3]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
@@ -22,7 +32,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] sm:rounded-b-[40px] pb-[20px]">
+			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[200px]">
 					<div className="max-w-[900px]">
 						<div className="font-medium sm:text-[48px] text-[32px]">
