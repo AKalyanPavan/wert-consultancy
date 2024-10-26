@@ -22,7 +22,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] rounded-b-[40px]">
+			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] sm:rounded-b-[40px] pb-[20px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[200px]">
 					<div className="max-w-[900px]">
 						<div className="font-medium sm:text-[48px] text-[32px]">
@@ -55,7 +55,7 @@ function Homepage() {
 				            </div>
 			            </div>
 		            </div>
-		            <div className="max-w-[500px] ml-auto mt-[50px] bg-[#082d60] px-[50px] py-[40px] rounded-[20px] mb-[-50px]">
+		            <div className="max-w-[500px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[10px]">
 		            	<div className="text-[25px] text-white font-medium mb-[30px]">Try Wert Consultancy for free</div>
 		            	<div className="flex flex-col gap-[20px]">
 		            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
