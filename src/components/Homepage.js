@@ -28,10 +28,10 @@ function Homepage() {
 						<div className="font-medium sm:text-[48px] text-[32px]">
 							<div className="">Comprehensive <span className="">Accounting Platform</span> for growing businesses</div>
 						</div>
-						<div className="flex flex-col gap-[10px] mt-[30px] text-[#0099ff]">
+						<div className="flex flex-col gap-[10px] mt-[30px] text-black">
 							<div className="flex items-center">
 			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="#0099ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
 			                	</svg>
 				                <div className="text-[18px] font-normal ml-[5px]">
 				                	Comprehensive GST solutions
@@ -39,7 +39,7 @@ function Homepage() {
 				            </div>
 				            <div className="flex items-center">
 			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="#0099ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
 			                	</svg>
 				                <div className="text-[18px] font-normal ml-[5px]">
 				                	Full financial compliance
@@ -47,7 +47,7 @@ function Homepage() {
 				            </div>
 				            <div className="flex items-center">
 			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="#0099ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
 			                	</svg>
 				                <div className="text-[18px] font-normal ml-[5px]">
 				                	Seamless tax filing
