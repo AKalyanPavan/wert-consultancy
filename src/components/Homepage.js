@@ -1,4 +1,7 @@
 import logo from './../images/logo.svg';
+import registrationIcon from './../images/registration-icon.svg';
+import freelancers from './../images/freelancers.png';
+import consultants from './../images/consultants.png';
 
 function Homepage() {
 
@@ -33,7 +36,7 @@ function Homepage() {
 				</div>
 			</div>
 			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[200px]">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[150px]">
 					<div className="max-w-[900px]">
 						<div className="font-medium sm:text-[48px] text-[32px]">
 							<div className="">Comprehensive <span className="">Accounting Platform</span> for growing businesses</div>
@@ -65,8 +68,8 @@ function Homepage() {
 				            </div>
 			            </div>
 		            </div>
-		            <div className="max-w-[500px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[10px]">
-		            	<div className="text-[25px] text-white font-medium mb-[30px]">Try Wert Consultancy for free</div>
+		            <div className="max-w-[500px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
+		            	<div className="text-[25px] text-white font-medium mb-[30px]">Try Wert Consultancy for free!</div>
 		            	<div className="flex flex-col gap-[20px]">
 		            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
 		            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
@@ -96,6 +99,163 @@ function Homepage() {
 		            		<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]">SUBMIT</div>
 		            	</div>
 		            </div>
+				</div>
+			</div>
+			<div className="max-w-[1300px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
+				<div className="text-[32px] text-center font-semibold text-[#082d60] py-[70px]">POPULAR SERVICES</div>
+				<div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px]">
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Income Tax Notice Assistance
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							A dedicated tax expert helps you navigate and respond to notices under sections 139(9), 143(1), high-value transactions, and other notices from the Income Tax Department.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Expert Assisted ITR Filing
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Hire personal eCA to do Income Tax Filing for you. It is convenient & fast, with maximum refund calculated for you.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Updated Return Filing (ITR-U)
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							ITR-U helps individuals to update the correct income in the already filed ITR and also provides an opportunity for those who have not filed previously.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							NRI Tax Filing
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Ease your Indian tax filing with our experts, covering both foreign and domestic income. Our online CA ensures compliance with the Income tax laws and help you claim eligible tax deductions.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							File ITR Yourself (DIY filing )
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Trust us; you can file your Income tax return on your own. It’s fast, easy, and safe when you file ITR with Tax2win on your own.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Upload Form 16
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Simplify the Income Tax Return filing process at Tax2win. Just upload your Form 16 and get the ITR prepared automatically.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Capital Gain Tax Filing
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Seeking tax expert advice on the transaction done with respect to the sale of property, equity shares, mutual fund units, or bonds in addition to salary/business income.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="bg-[#f1faee] mt-[100px]">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] py-[70px]">
+					<div className="text-[32px] text-center font-semibold text-[#082d60] mb-[30px]">We Can Offer</div>
+					<div className="flex md:flex-row flex-col justify-center gap-[30px] items-center">
+						<div className="bg-[#082d60] py-[40px] px-[25px] rounded-[25px] text-white max-w-[400px]">
+							<div className="text-[24px] font-medium text-[#ffc94d] text-center">Business Registrations</div>
+							<div className="flex flex-col mt-[30px] gap-[15px]">
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Private Limited Company</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Limited Liability Partnership</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>One Person Company Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Partnership Firm Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Sole Proprietorship Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>GST Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Trust, 80G and 12A Registration 12AA Registration</span>
+								</div>
+							</div>
+						</div>
+						<div className="bg-[#082d60] py-[40px] px-[25px] rounded-[25px] text-white max-w-[400px]">
+							<div className="text-[24px] font-medium text-[#ffc94d] text-center">Other Registrations</div>
+							<div className="flex flex-col mt-[30px] gap-[15px]">
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>MSME Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Import & Export Code (DGFT)</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>FSSAI Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Shop & Establishment</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Professional Tax Registration</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Digital Signature Certificate (Emudhra- DSC)</span>
+								</div>
+								<div className="flex gap-[5px] items-start">
+									<img src={registrationIcon} />
+									<span>Trademark Registration</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
+				<div className="text-[32px] text-center font-semibold text-[#082d60] py-[70px]">Supporting All Your Growth Needs</div>
+				<div className="grid grid-cols-4">
+					<div>
+						<img className="w-[60px] mx-auto" src={freelancers} />
+						<div className="font-medium text-[18px] mt-[20px] h-[50px] text-center">
+							For Salaried Individuals & Freelancers
+						</div>
+						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
+							Build a tax-compliant freelance career effortlessly with our expert support. We help ensure smooth tax planning and filing for your growing career.
+						</div>
+					</div>
+					<div>
+						<img className="w-[60px] mx-auto" src={consultants} />
+						<div className="font-medium text-[18px] mt-[20px] h-[50px] text-center">
+							For Consultants and Professionals
+						</div>
+						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
+							Stay on top of your profits and plan your taxes efficiently with our guidance. Our services offer precise tax management for seamless financial control.
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className="h-[2000px]">
