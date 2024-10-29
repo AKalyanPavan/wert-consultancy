@@ -1,10 +1,21 @@
+import React, { useState, useEffect } from 'react';
 import logo from './../images/logo.svg';
 import registrationIcon from './../images/registration-icon.svg';
 import freelancers from './../images/freelancers.png';
 import consultants from './../images/consultants.png';
 import smeBusiness from './../images/sme-business.png';
+import ramaChandran from './../images/rama-chandran.png';
+import ssTech from './../images/ss-tech.svg';
+import naveenKiran from './../images/naveen-kiran.png';
+import aravindhRV from './../images/aravindh-rv.png';
+import nithyaRagunathasamy from './../images/nithya-ragunathasamy.svg';
+import dhiveshPM from './../images/dhivesh-pm.svg';
+import star from './../images/star.svg';
 
 function Homepage() {
+
+	const [activeTestimonial, setActiveTestimonial] = useState(1);
+	const [translateX, setTranslateX] = useState(0);
 
 	document.addEventListener('scroll', () => {
 	    let header = document.getElementById("header");
@@ -15,9 +26,76 @@ function Homepage() {
 	    }
 	});
 
+	function scrollTestimonial(direction) {
+
+		let scrollArrows = document.getElementsByClassName("scrollArrow");
+
+	    let testimonialContainerFixed = document.getElementById("testimonialContainerFixed");
+	    let testimonialContainerParent = document.getElementById("testimonialContainerParent");
+	    let testimonial = document.getElementsByClassName("testimonial")[0];
+	    let testimonialIndex = document.getElementsByClassName("testimonialIndex");
+
+	    let transformValue;
+	    let translateXValue;
+
+	    if (direction == "initialLeft") {
+
+	      translateXValue = ( ( (testimonialContainerFixed.clientWidth ) - ( (testimonial.clientWidth * 3) + (2 * 20)) ) / 2 );
+	      transformValue = `translateX(${translateXValue}px)`;
+	      setTranslateX(translateXValue);
+
+	    } else if (direction == "left" && activeTestimonial > 0) {
+
+	    	for (var i = 0; i < scrollArrows.length; i++) {
+				scrollArrows[i].classList.add("pointer-events-none");
+			}
+
+	      translateXValue = translateX + testimonial.clientWidth;
+	      transformValue = `translateX(${translateXValue}px)`;
+	      setTranslateX(translateXValue);
+
+	      setTimeout(function(){
+	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
+	        testimonialIndex[activeTestimonial - 1].children[0].setAttribute("fill", "#ffc94d");
+	        setActiveTestimonial(activeTestimonial - 1);
+	        for (var i = 0; i < scrollArrows.length; i++) {
+				scrollArrows[i].classList.remove("pointer-events-none");
+			}
+	      }, 500);
+
+	    } else if (direction == "right" && activeTestimonial < 5) {
+
+	    	for (var i = 0; i < scrollArrows.length; i++) {
+				scrollArrows[i].classList.add("pointer-events-none");
+			}
+
+	      translateXValue = translateX - testimonial.clientWidth;
+	      transformValue = `translateX(${translateXValue}px)`;
+	      setTranslateX(translateXValue);
+
+	      setTimeout(function(){
+	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
+	        testimonialIndex[activeTestimonial + 1].children[0].setAttribute("fill", "#ffc94d");
+	        setActiveTestimonial(activeTestimonial + 1);
+	        for (var i = 0; i < scrollArrows.length; i++) {
+				scrollArrows[i].classList.remove("pointer-events-none");
+			}
+	      }, 500);
+
+	    }
+
+	    testimonialContainerParent.style.transform = transformValue;
+	}
+
+	useEffect(() => {
+		if (translateX == 0) {
+			scrollTestimonial("initialLeft");
+		}
+	});
+
 	return(
 		<>
-			<div id="header" className="sticky top-[0px] bg-[#f4f5c3]">
+			<div id="header" className="sticky top-[0px] bg-[#f4f5c3] z-[1]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
@@ -236,8 +314,8 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] text-center">
-				<div className="text-[32px] text-center font-semibold text-[#082d60] py-[70px]">Supporting All Your Growth Needs</div>
+			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] py-[70px] font-['Lexend'] text-center">
+				<div className="text-[32px] text-center font-semibold text-[#082d60] pb-[70px]">Supporting All Your Growth Needs</div>
 				<div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 border-collapse">
 					<div className="border-solid border-[1px] border-[#e6e6e6] p-[30px]">
 						<img className="w-[60px] mx-auto" src={freelancers} />
@@ -275,6 +353,164 @@ function Homepage() {
 							Ensure accurate tax filing for your trading activities with our expert help. We handle all tax aspects of equity, intraday, and F&O trading, keeping you compliant.
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className="bg-[#ebf6ff] py-[70px]">
+				<div className="w-[100%] tracking-[1px]">
+			        <div className="max-w-[1400px] w-[100%] mx-auto px-[20px] md:px-[50px]">
+			          <div id="testimonialContainerFixed" className="overflow-hidden">
+			            <div className="text-[32px] text-center font-semibold text-[#082d60]">What Our Customers Say</div>
+			            <div id="testimonialContainerParent" className="flex w-[800%]" style={{
+			              transition: 'transform 0.5s ease-in-out'
+			            }}>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+								<div className="">
+									I visited Wert Consultancy for tax filing, and I was impressed with how quickly Naveen and Satish handled everything. Their promptness and attention to detail were outstanding, making the process smooth and efficient.
+								</div>
+								<div className="flex items-center">
+									<img className="w-[60px] h-[60px]" src={ramaChandran} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">Rama Chandran</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#FFDF73] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+								<div className="">
+									Wert Consultancy ensures timely tax returns and compliance with GST regulations. Their thorough advice and consistent support have allowed us to manage our business seamlessly, without worrying about tax obligations.
+								</div>
+								<div className="flex">
+									<img src={ssTech} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">SS Tech</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#E0FF88] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+			                	<div className="">
+			                		I’ve worked with Wert Consultancy on both direct and indirect taxation, and their professionalism and dedication were evident throughout our collaboration. Their expertise has been invaluable.
+			                	</div>
+								<div className="flex">
+									<img src={naveenKiran} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">Naveen Kiran</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+			                	<div className="">
+			                		Highly professional service! They helped me understand complex tax issues and provided clear, practical solutions. Their transparency and expertise make them highly recommended for anyone needing tax assistance.
+			                	</div>
+								<div className="flex">
+									<img src={aravindhRV} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">Aravinth Rv</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#98ff88] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+			                	<div className="">
+			                		Wert Consultancy is a highly recommended firm for addressing financial queries. They ensure timely services and provide excellent guidance on all financial matters.
+			                	</div>
+								<div className="flex">
+									<img src={nithyaRagunathasamy} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">Nithya Ragunathasamy</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#ffcb8a] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+			                	<div className="">
+			                		Wert Consultancy handled my F.Y. 2023-2024 tax return with exceptional service. Their professionalism and quick communication made the process smooth. Highly recommend for tax matters
+			                	</div>
+								<div className="flex">
+									<img src={dhiveshPM} />
+									<div className="ml-[15px]">
+										<span className="text-[24px] font-semibold">Dhivesh Pm</span>
+										<div className="flex gap-[2px]">
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+											<img src={star} />
+										</div>
+									</div>
+								</div>
+			                </div>
+			            </div>
+			          </div>
+			          <div className="mt-[50px] flex items-center justify-center">
+			            <div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("left")}>
+			              <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <path d="M6 9L1 5L6 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			              </svg>
+			            </div>
+			            <div className="flex mx-[30px] gap-[10px]">
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			              </svg>
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#ffc94d"/>
+			              </svg>
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			              </svg>
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			              </svg>
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			              </svg>
+			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			              </svg>
+			            </div>
+			            <div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("right")}>
+			              <svg className="mt-[2px] ml-[3px]" width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+			                <path d="M1 9L6 5L1 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+			              </svg>
+			            </div>
+			          </div>
+			        </div>
+			    </div>
+			</div>
+			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] mt-[100px]">
+				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
+					Plans based on your selection
 				</div>
 			</div>
 			<div className="h-[2000px]">
