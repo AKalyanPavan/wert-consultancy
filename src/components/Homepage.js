@@ -52,7 +52,7 @@ function Homepage() {
 				scrollArrows[i].classList.add("pointer-events-none");
 			}
 
-	      translateXValue = translateX + testimonial.clientWidth;
+	      translateXValue = translateX + testimonial.clientWidth + 20;
 	      transformValue = `translateX(${translateXValue}px)`;
 	      setTranslateX(translateXValue);
 
@@ -71,7 +71,7 @@ function Homepage() {
 				scrollArrows[i].classList.add("pointer-events-none");
 			}
 
-	      translateXValue = translateX - testimonial.clientWidth;
+	      translateXValue = translateX - testimonial.clientWidth - 20;
 	      transformValue = `translateX(${translateXValue}px)`;
 	      setTranslateX(translateXValue);
 
