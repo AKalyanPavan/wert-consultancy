@@ -2,6 +2,7 @@ import logo from './../images/logo.svg';
 import registrationIcon from './../images/registration-icon.svg';
 import freelancers from './../images/freelancers.png';
 import consultants from './../images/consultants.png';
+import smeBusiness from './../images/sme-business.png';
 
 function Homepage() {
 
@@ -235,25 +236,43 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
+			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] text-center">
 				<div className="text-[32px] text-center font-semibold text-[#082d60] py-[70px]">Supporting All Your Growth Needs</div>
-				<div className="grid grid-cols-4">
-					<div>
+				<div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 border-collapse">
+					<div className="border-solid border-[1px] border-[#e6e6e6] p-[30px]">
 						<img className="w-[60px] mx-auto" src={freelancers} />
-						<div className="font-medium text-[18px] mt-[20px] h-[50px] text-center">
+						<div className="font-medium text-[18px] mt-[20px] h-[50px]">
 							For Salaried Individuals & Freelancers
 						</div>
 						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
 							Build a tax-compliant freelance career effortlessly with our expert support. We help ensure smooth tax planning and filing for your growing career.
 						</div>
 					</div>
-					<div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] p-[30px]">
+						<img className="w-[60px] mx-auto" src={smeBusiness} />
+						<div className="font-medium text-[18px] mt-[20px] h-[50px]">
+							For SMEs & MSME Businesses
+						</div>
+						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
+							Eliminate the stress of business accounting and compliance with our tailored services. We ensure your business remains compliant, freeing you to focus on growth.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] p-[30px]">
 						<img className="w-[60px] mx-auto" src={consultants} />
-						<div className="font-medium text-[18px] mt-[20px] h-[50px] text-center">
+						<div className="font-medium text-[18px] mt-[20px] h-[50px]">
 							For Consultants and Professionals
 						</div>
 						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
 							Stay on top of your profits and plan your taxes efficiently with our guidance. Our services offer precise tax management for seamless financial control.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] p-[30px]">
+						<img className="w-[60px] mx-auto" src={smeBusiness} />
+						<div className="font-medium text-[18px] mt-[20px] h-[50px]">
+							For Equity, Intraday, and F&O Traders
+						</div>
+						<div className="mt-[10px] text-[#a7a7a7] text-[16px]">
+							Ensure accurate tax filing for your trading activities with our expert help. We handle all tax aspects of equity, intraday, and F&O trading, keeping you compliant.
 						</div>
 					</div>
 				</div>
