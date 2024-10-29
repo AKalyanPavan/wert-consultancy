@@ -11,6 +11,8 @@ import aravindhRV from './../images/aravindh-rv.png';
 import nithyaRagunathasamy from './../images/nithya-ragunathasamy.svg';
 import dhiveshPM from './../images/dhivesh-pm.svg';
 import star from './../images/star.svg';
+import Check from './Check.js';
+
 
 function Homepage() {
 
@@ -87,6 +89,17 @@ function Homepage() {
 	    testimonialContainerParent.style.transform = transformValue;
 	}
 
+	function scrollPage(id) {
+
+		let element = document.getElementById(id);
+
+        window.scrollTo({
+            top: element.offsetTop - 120,
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
 	useEffect(() => {
 		if (translateX == 0) {
 			scrollTestimonial("initialLeft");
@@ -99,7 +112,7 @@ function Homepage() {
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
-						<div className="cursor-pointer mr-[20px] sm:block hidden">Pricing</div>
+						<div className="cursor-pointer mr-[20px] sm:block hidden" onClick={() => scrollPage("pricing")}>Pricing</div>
 						<a class="" href="tel:+916381637626">
 			              <div className="w-fit border-[solid] border-[1.5px] border-[#082d60] sm:px-[20px] px-[10px] py-[5px] rounded-[10px] items-center flex cursor-pointer">
 			                <div className="flex items-center border-[solid] pr-[5px] py-[5px]">
@@ -508,9 +521,253 @@ function Homepage() {
 			        </div>
 			    </div>
 			</div>
-			<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] mt-[100px]">
+			<div id="pricing" className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] mt-[100px]">
 				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
 					Plans based on your selection
+				</div>
+				<div className="grid xl:grid-cols-3 min-[700px]:grid-cols-2 grid-cols-1 gap-[30px] mt-[30px]">
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">Salary & House property Plan</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">2,599</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">Business & Professional Plan</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">1,299</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Business & Professional Income (Non Audit) - Without B/S P/L*</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">Capital Gain Plan</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">1,499</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Multiple Capital Gain Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Business & Professional Income (Non Audit) - Without B/S P/L*</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">Future & Options Plan</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">2,599</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>F&O Income/Loss(Non Audit)</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Speculative Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Multiple Capital Gain Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">Crypto Currency Plan</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">3,799</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Crypto Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>F&O Income/Loss(Non Audit)</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Speculative Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Multiple Capital Gain Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
+					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
+						<div className="font-bold text-[24px] h-[80px] text-center">NRI/Resident Having Foreign Income</div>
+						<div className="mt-[20px] flex items-center">
+							<div className="text-[48px] font-bold">3,799</div>
+							<div className="ml-[10px] text-[18px]">/ Year</div>
+						</div>
+						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
+						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
+						<div className="flex flex-col gap-[20px]">
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Foreign salary(Including Foreign Tax relief)</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>DTAA Tax Relief</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple Employers</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Single & Multiple House Property</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Multiple Capital Gain Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>RSU/ESOP</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Crypto Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>F&O Income/Loss(Non Audit)</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Speculative Income</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Income from Other Sources</span>
+							</div>
+							<div className="flex gap-[10px] items-start">
+								<Check />
+								<span>Agriculture Income</span>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className="h-[2000px]">
