@@ -16,7 +16,7 @@ import Check from './Check.js';
 
 function Homepage() {
 
-	const [activeTestimonial, setActiveTestimonial] = useState(1);
+	const [activeTestimonial, setActiveTestimonial] = useState(0);
 	const [translateX, setTranslateX] = useState(0);
 
 	document.addEventListener('scroll', () => {
@@ -101,9 +101,9 @@ function Homepage() {
     }
 
 	useEffect(() => {
-		if (translateX == 0) {
-			scrollTestimonial("initialLeft");
-		}
+		// if (translateX == 0) {
+		// 	scrollTestimonial("initialLeft");
+		// }
 	});
 
 	return(
@@ -494,10 +494,10 @@ function Homepage() {
 			            </div>
 			            <div className="flex mx-[30px] gap-[10px]">
 			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
+			                <circle cx="5" cy="5" r="5" fill="#ffc94d"/>
 			              </svg>
 			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#ffc94d"/>
+			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
 			              </svg>
 			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
