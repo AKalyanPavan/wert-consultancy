@@ -18,6 +18,7 @@ function Homepage() {
 
 	const [activeTestimonial, setActiveTestimonial] = useState(0);
 	const [translateX, setTranslateX] = useState(0);
+	const [scrollDirection, setScrollDirection] = useState('right');
 
 	document.addEventListener('scroll', () => {
 	    let header = document.getElementById("header");
@@ -56,14 +57,14 @@ function Homepage() {
 	      transformValue = `translateX(${translateXValue}px)`;
 	      setTranslateX(translateXValue);
 
-	      setTimeout(function(){
+	      // setTimeout(function(){
 	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
 	        testimonialIndex[activeTestimonial - 1].children[0].setAttribute("fill", "#ffc94d");
 	        setActiveTestimonial(activeTestimonial - 1);
 	        for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.remove("pointer-events-none");
 			}
-	      }, 500);
+	      // }, 500);
 
 	    } else if (direction == "right" && activeTestimonial < 5) {
 
@@ -75,14 +76,14 @@ function Homepage() {
 	      transformValue = `translateX(${translateXValue}px)`;
 	      setTranslateX(translateXValue);
 
-	      setTimeout(function(){
+	      // setTimeout(function(){
 	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
 	        testimonialIndex[activeTestimonial + 1].children[0].setAttribute("fill", "#ffc94d");
 	        setActiveTestimonial(activeTestimonial + 1);
 	        for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.remove("pointer-events-none");
 			}
-	      }, 500);
+	      // }, 500);
 
 	    }
 
@@ -101,10 +102,23 @@ function Homepage() {
     }
 
 	useEffect(() => {
-		// if (translateX == 0) {
-		// 	scrollTestimonial("initialLeft");
-		// }
-	});
+
+		const interval =setInterval(() => {
+
+			console.log(activeTestimonial);
+
+			if (activeTestimonial == 5) {
+				setScrollDirection('left');
+			} else if (activeTestimonial == 0) {
+				setScrollDirection('right');
+			}
+
+			scrollTestimonial(scrollDirection);
+
+        }, 4000);
+
+        return () => clearInterval(interval);
+	}, [activeTestimonial, scrollDirection]);
 
 	return(
 		<>
