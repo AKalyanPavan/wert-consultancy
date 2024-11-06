@@ -105,8 +105,6 @@ function Homepage() {
 
 		const interval =setInterval(() => {
 
-			console.log(activeTestimonial);
-
 			if (activeTestimonial == 5) {
 				setScrollDirection('left');
 			} else if (activeTestimonial == 0) {
@@ -123,7 +121,7 @@ function Homepage() {
 	return(
 		<>
 			<div id="header" className="sticky top-[0px] bg-[#f4f5c3] z-[1]">
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] flex items-center justify-between font-['Lexend']">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] py-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
 						<div className="cursor-pointer mr-[20px] sm:block hidden" onClick={() => scrollPage("pricing")}>Pricing</div>
