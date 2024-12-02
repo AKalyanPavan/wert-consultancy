@@ -101,6 +101,55 @@ function Homepage() {
         });
     }
 
+    // function need to be optimized
+    function togglePlanType(planType) {
+
+		let tds = document.getElementById("tds");
+		let itr = document.getElementById("itr");
+		let gst = document.getElementById("gst");
+
+		if (planType == "tds" && !tds.classList.contains("text-white")) {
+
+			itr.classList.remove("text-white");
+			itr.classList.remove("bg-[#4f1e8e]");
+
+			gst.classList.remove("text-white");
+			gst.classList.remove("bg-[#4f1e8e]");
+
+			tds.classList.add("text-white");
+			tds.classList.add("bg-[#4f1e8e]");
+
+			// setCurrentPricingPlans(monthlyPricingPlans);
+
+		} else if (planType == "itr" && !itr.classList.contains("text-white")) {
+
+			tds.classList.remove("text-white");
+			tds.classList.remove("bg-[#4f1e8e]");
+
+			gst.classList.remove("text-white");
+			gst.classList.remove("bg-[#4f1e8e]");
+
+			itr.classList.add("text-white");
+			itr.classList.add("bg-[#4f1e8e]");
+
+			// setCurrentPricingPlans(yearlyPricingPlans);
+
+		} else if (planType == "gst" && !gst.classList.contains("text-white")) {
+
+			tds.classList.remove("text-white");
+			tds.classList.remove("bg-[#4f1e8e]");
+
+			itr.classList.remove("text-white");
+			itr.classList.remove("bg-[#4f1e8e]");
+
+			gst.classList.add("text-white");
+			gst.classList.add("bg-[#4f1e8e]");
+
+			// setCurrentPricingPlans(yearlyPricingPlans);
+
+		}
+	}
+
 	useEffect(() => {
 
 		const interval =setInterval(() => {
@@ -120,7 +169,7 @@ function Homepage() {
 
 	return(
 		<>
-			<div id="header" className="sticky top-[0px] bg-[#f4f5c3] z-[1]">
+			<div id="header" className="sticky top-[0px] bg-[#d7e9f7] z-[1]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] py-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
@@ -139,7 +188,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="font-['Lexend'] bg-[#f4f5c3] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
+			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[150px]">
 					<div className="max-w-[900px]">
 						<div className="font-medium sm:text-[48px] text-[32px]">
@@ -266,7 +315,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="bg-[#f1faee] mt-[100px]">
+			<div className="bg-[#d7e9f7] mt-[100px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] py-[70px]">
 					<div className="text-[32px] text-center font-semibold text-[#082d60] mb-[30px]">We Can Offer</div>
 					<div className="flex md:flex-row flex-col justify-center gap-[30px] items-center">
@@ -380,7 +429,7 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="bg-[#ebf6ff] py-[70px]">
+			<div className="bg-[#d7e9f7] py-[70px]">
 				<div className="w-[100%] tracking-[1px]">
 			        <div className="max-w-[1400px] w-[100%] mx-auto px-[20px] md:px-[50px]">
 			          <div id="testimonialContainerFixed" className="overflow-hidden">
@@ -537,7 +586,12 @@ function Homepage() {
 				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
 					Plans based on your selection
 				</div>
-				<div className="grid xl:grid-cols-3 min-[700px]:grid-cols-2 grid-cols-1 gap-[30px] mt-[30px]">
+				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto my-[50px] rounded-[50px] text-[14px] flex items-center">
+					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("tds")}>TDS</span>
+					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#4f1e8e] text-white py-[10px]" onClick={() => togglePlanType("itr")}>Income Tax</span>
+					<span id="gst" className="cursor-pointer rounded-[50px] px-[20px] py-[10px]" onClick={() => togglePlanType("gst")}>GST</span>
+				</div>
+				<div className="grid xl:grid-cols-3 min-[700px]:grid-cols-2 grid-cols-1 gap-[30px]">
 					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
 						<div className="font-bold text-[24px] h-[80px] text-center">Salary & House property Plan</div>
 						<div className="mt-[20px] flex items-center">
