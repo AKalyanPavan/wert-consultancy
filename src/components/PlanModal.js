@@ -23,7 +23,7 @@ export default function PlanModal({plan, planDuration, onModalOverlayClicked}) {
 			</div>
 			<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
 			<div className="mt-[30px] mb-[10px] font-bold text-[16px] text-[#0077b6]">Plan Features</div>
-			<div className="flex flex-col gap-[20px]">
+			<div className="flex flex-col gap-[15px]">
 				{plan.planFeatures.map(function (feature, i) {
 		            return (
 		            	<div>
@@ -39,7 +39,7 @@ export default function PlanModal({plan, planDuration, onModalOverlayClicked}) {
 		        })}
 			</div>
 			<div className="mt-[30px] mt-[20px] mb-[10px] font-bold text-[16px] text-[#0077b6]">Applicable To</div>
-			<div className="flex flex-col gap-[20px]">
+			<div className="flex flex-col gap-[10px]">
 				{plan.applicableTo.map(function (applicableItem, i) {
 		            return (
 		            	<div>
@@ -52,7 +52,7 @@ export default function PlanModal({plan, planDuration, onModalOverlayClicked}) {
 		        })}
 			</div>
 			<div className="mt-[30px] mt-[20px] mb-[10px] font-bold text-[16px] text-[#0077b6]">Documents</div>
-			<div className="flex flex-col gap-[20px]">
+			<div className="flex flex-col gap-[10px]">
 				{plan.Documents.map(function (document, i) {
 		            return (
 		            	<div>
