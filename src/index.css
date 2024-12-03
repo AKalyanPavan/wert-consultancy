@@ -17,3 +17,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@keyframes slideIn {
+  from {top: 0px;}
+  to {top: 50%;}
+}
+
+@keyframes slideOut {
+  from {top: 50%;}
+  to {top: 0px;}
+}

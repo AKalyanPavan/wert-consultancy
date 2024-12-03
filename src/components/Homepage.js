@@ -14,6 +14,7 @@ import star from './../images/star.svg';
 
 import Check from './Check.js';
 import PlanCard from './PlanCard.js';
+import PlanModal from './PlanModal.js';
 
 
 function Homepage() {
@@ -88,6 +89,7 @@ function Homepage() {
 			price: '₹747',
 			yearlyPrice: '₹7,470',
 			priceDuration: '/ month',
+			yearlyPriceDuration: '/ year',
 			planFeatures: [
 				{
 					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
@@ -117,8 +119,9 @@ function Homepage() {
 			type: 'gst',
 			title: 'GST Filing E-Commerce',
 			price: '₹997',
-			yearlyPrice: '₹7,470',
+			yearlyPrice: '₹9,970',
 			priceDuration: '/ month',
+			yearlyPriceDuration: '/ year',
 			planFeatures: [
 				{
 					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
@@ -146,6 +149,7 @@ function Homepage() {
 			price: '₹1,247',
 			yearlyPrice: '₹12,470',
 			priceDuration: '/ month',
+			yearlyPriceDuration: '/ year',
 			planFeatures: [
 				{
 					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
@@ -507,6 +511,9 @@ function Homepage() {
 	const [scrollDirection, setScrollDirection] = useState('right');
 	const [planType, setPlanType] = useState('tds');
 	const [currentPlans, setCurrentPlans] = useState(toggleCurrentPlans(planType));
+	const [planDuration, setPlanDuration] = useState('yearly');
+	const [modalDisplay, setModalDisplay] = useState('hidden');
+	const [modalPlan, setModalPlan] = useState(plans[0]);
 
 	document.addEventListener('scroll', () => {
 	    let header = document.getElementById("header");
@@ -528,6 +535,32 @@ function Homepage() {
 		});
 
 		return _currentPlans;
+	}
+
+	function togglePlanDuration(planDuration) {
+
+		let monthly = document.getElementById("monthly");
+		let yearly = document.getElementById("yearly");
+
+		if (planDuration == "monthly" && !monthly.classList.contains("text-white")) {
+
+			yearly.classList.remove("text-white");
+			yearly.classList.remove("bg-[#082d60]");
+
+			monthly.classList.add("text-white");
+			monthly.classList.add("bg-[#082d60]");
+
+		} else if (planDuration == "yearly" && !yearly.classList.contains("text-white")) {
+
+			monthly.classList.remove("text-white");
+			monthly.classList.remove("bg-[#082d60]");
+
+			yearly.classList.add("text-white");
+			yearly.classList.add("bg-[#082d60]");
+
+		}
+
+		setPlanDuration(planDuration);
 	}
 
 	function scrollTestimonial(direction) {
@@ -620,8 +653,6 @@ function Homepage() {
 			tds.classList.add("text-white");
 			tds.classList.add("bg-[#082d60]");
 
-			setPlanType("tds");
-
 		} else if (planType == "itr" && !itr.classList.contains("text-white")) {
 
 			tds.classList.remove("text-white");
@@ -632,8 +663,6 @@ function Homepage() {
 
 			itr.classList.add("text-white");
 			itr.classList.add("bg-[#082d60]");
-
-			setPlanType("itr");
 
 		} else if (planType == "gst" && !gst.classList.contains("text-white")) {
 
@@ -646,12 +675,37 @@ function Homepage() {
 			gst.classList.add("text-white");
 			gst.classList.add("bg-[#082d60]");
 
-			setPlanType("gst");
-
 		}
+
+		setPlanType(planType);
+
 		setCurrentPlans(toggleCurrentPlans(planType));
-		console.log(currentPlans);
+
 	}
+
+	function openCardModal(plan) {
+
+		setModalPlan(plan);
+
+        let modal = document.querySelector("#modal");
+        
+        if (modal) {
+            modal.style.animationName = "slideIn"
+            setModalDisplay("");
+        }
+    }
+
+	function onModalOverlayClicked(event) {
+
+        let modal = document.querySelector("#modal");
+
+        if (modal) {
+            modal.style.animationName = "slideOut"
+            setTimeout(() => {
+                setModalDisplay("hidden");
+            }, 180);
+        }
+    }
 
 	useEffect(() => {
 
@@ -672,6 +726,29 @@ function Homepage() {
 
 	return(
 		<>
+			{/*Modal*/}
+            <div 
+                id="modalOverlay" 
+                className={"w-[100%] bg-[#000000ab] fixed top-[0px] left-[0px] h-[100%] z-[5] " + modalDisplay}>
+
+                <div 
+                    style={{
+                        animationName: "slideIn",
+                        animationDuration: "0.5s",
+                        transform: "translate(-50%, -50%)",
+                        maxHeight: "calc(100vh - 150px)",
+                        overflowY: "auto",
+                    }}
+                    id="modal" 
+                    className={"w-[80%] min-[500px]:w-[400px] bg-[#d7e9f7] fixed top-[50%] left-[50%] rounded-[20px] " + modalDisplay}>
+
+                    <div className="max-w-[400px]">
+                    	<PlanModal plan={modalPlan} planDuration={planDuration} onModalOverlayClicked={onModalOverlayClicked} />
+                    </div>
+
+                </div>
+            </div>
+
 			<div id="header" className="sticky top-[0px] bg-[#d7e9f7] z-[1]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] py-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
@@ -1089,14 +1166,23 @@ function Homepage() {
 				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
 					Plans based on your selection
 				</div>
-				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto my-[50px] rounded-[50px] text-[14px] flex items-center font-semibold">
+				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto mt-[50px] rounded-[50px] text-[14px] flex items-center font-semibold">
 					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#082d60] text-white" onClick={() => togglePlanType("tds")}>TDS</span>
 					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("itr")}>Income Tax</span>
 					<span id="gst" className="cursor-pointer rounded-[50px] px-[20px] py-[10px]" onClick={() => togglePlanType("gst")}>GST</span>
 				</div>
-				<div className={`w-fit mx-auto grid gap-[30px] min-[700px]:grid-cols-2 grid-cols-1 ${(planType === 'tds') ? '' : 'xl:grid-cols-3'}`}>
+				{(planType === 'gst') && 
+					<>
+						<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto mt-[30px] rounded-[50px] text-[14px] flex items-center font-semibold">
+							<span id="monthly" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanDuration("monthly")}>Monthly</span>
+							<span id="yearly" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#082d60] text-white" onClick={() => togglePlanDuration("yearly")}>Yearly</span>
+						</div>
+						<div className="text-center mt-[20px] text-[#0068ff] text-[18px] font-normal"><span>*</span>pay for 10 months and get 2 months free, save 8.33% we offer discount more than your FD interest.</div>
+					</>
+				}
+				<div className={`w-fit mx-auto grid gap-[30px] min-[700px]:grid-cols-2 grid-cols-1 mt-[50px] ${(planType === 'tds') ? '' : 'xl:grid-cols-3'}`}>
 					{currentPlans.map((currentPlan, i) => 
-						<PlanCard plan={currentPlan} />
+						<PlanCard openCardModal={openCardModal} plan={currentPlan} planDuration={planDuration} />
 					)}
 				</div>
 			</div>
