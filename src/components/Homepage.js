@@ -11,14 +11,502 @@ import aravindhRV from './../images/aravindh-rv.png';
 import nithyaRagunathasamy from './../images/nithya-ragunathasamy.svg';
 import dhiveshPM from './../images/dhivesh-pm.svg';
 import star from './../images/star.svg';
+
 import Check from './Check.js';
+import PlanCard from './PlanCard.js';
 
 
 function Homepage() {
 
+	const plans = [
+		{
+			type: 'tds',
+			title: 'TDS Filing Plan',
+			price: '₹997',
+			priceDuration: '/ month',
+			planFeatures: [
+				{
+					title: 'Registration on TRACES & TDS Returns E-filing',
+					subFeatures: [
+						'Form 24Q (Statement of tax deducted at source on salaries)',
+						'Form 26Q (Certificate of tax deducted at source)',
+						'Form 26QC (TDS on Renting of property Transactions)',
+						'Generation of Form 16 & 16A',
+					],
+				},
+				{
+					title: 'Includes support for Challan Payments',
+				},
+			],
+			applicableTo: [
+				'Up to 25 Deductees',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'TAN registration fees separate ₹497',
+			],
+			Documents: [
+				'PAN & other Details of deductor',
+				'PAN & other Details of deductee',
+				'Applicable Deduction details',
+				'Tax payment details',
+			],
+		},
+		{
+			type: 'tds',
+			title: 'TDS on Purchase of Immovable Property',
+			price: '₹1,497',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Registration on TRACES',
+				},
+				{
+					title: 'E-filing Form 26QB (TDS on sale of immovable property)',
+				},
+				{
+					title: 'Generation of Form 16B',
+				},
+				{
+					title: 'Includes support for Challan Payments',
+				},
+			],
+			applicableTo: [
+				'For single 26QB form',
+				'For every additional Challan & forms - ₹497',
+				'Email / WhatsApp Support',
+			],
+			Documents: [
+				'PAN of buyer(s) and seller(s)',
+				'Sale/Purchase Deed (If applicable)',
+				'Address and Phone number of buyer(s) and seller(s)',
+				'Tax payment details',
+			],
+		},
+		{
+			type: 'gst',
+			title: 'GST Filing Service for Providers & Professionals',
+			price: '₹747',
+			yearlyPrice: '₹7,470',
+			priceDuration: '/ month',
+			planFeatures: [
+				{
+					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
+				},
+				{
+					title: 'If TDS returns applicable, ₹497 extra will be charged',
+				},
+				{
+					title: 'Bookkeeping and Accounting are not part of the package',
+				},
+				{
+					title: '2B vs Books Reconciliation',
+				},
+			],
+			applicableTo: [
+				'Valid for Turnover less than ₹5 Cr',
+				'Applicable for Service providers, professionals, and Composition dealers (up to ₹1.5 Cr turnover)',
+				'Email / WhatsApp Support',
+				'For Turnover above ₹5 Cr, contact for customized pricing',
+			],
+			Documents: [
+				'Sales details for the month in Excel, JSON, or any accounting software such as Tally, Zoho Books, etc.',
+				'Purchase details in Excel or any accounting software such as Tally, Zoho Books',
+			],
+		},
+		{
+			type: 'gst',
+			title: 'GST Filing E-Commerce',
+			price: '₹997',
+			yearlyPrice: '₹7,470',
+			priceDuration: '/ month',
+			planFeatures: [
+				{
+					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
+				},
+				{
+					title: 'Bookkeeping and Accounting are not part of the package',
+				},
+				{
+					title: '2B vs Books Reconciliation',
+				},
+			],
+			applicableTo: [
+				'Valid for Turnover less than ₹2 Cr',
+				'For sellers on multiple e-commerce platforms',
+				'Email / WhatsApp Support',
+			],
+			Documents: [
+				'Sales details for the month in Excel, JSON, or any accounting software such as Tally, Zoho Books, etc.',
+				'Purchase details in Excel or any accounting software such as Tally, Zoho Books',
+			],
+		},
+		{
+			type: 'gst',
+			title: 'GST Filing Business',
+			price: '₹1,247',
+			yearlyPrice: '₹12,470',
+			priceDuration: '/ month',
+			planFeatures: [
+				{
+					title: 'GSTR-1 and GSTR-3B Returns for single GSTN',
+				},
+				{
+					title: 'If TDS returns applicable, ₹497 extra will be charged',
+				},
+				{
+					title: 'Bookkeeping and Accounting are not part of the package',
+				},
+				{
+					title: '2B vs Books Reconciliation',
+				},
+			],
+			applicableTo: [
+				'Valid for Turnover less than ₹2 Cr',
+				'Manufacturing / Trading',
+				'For sellers on multiple e-commerce platforms',
+				'Email / WhatsApp Support',
+			],
+			Documents: [
+				'Sales details for the month in Excel, JSON, or any accounting software such as Tally, Zoho Books, etc.',
+				'Purchase details in Excel or any accounting software such as Tally, Zoho Books',
+			],
+		},
+		{
+			type: 'gst',
+			title: 'GST Annual Return Filing',
+			price: '₹9,997',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'GSTR-9 filing',
+				},
+				{
+					title: 'GSTR-9C Reconciliation statement',
+				},
+				{
+					title: 'Includes CA certification',
+				},
+			],
+			applicableTo: [
+				'Turnover less than ₹10 Cr',
+				'Email / WhatsApp Support',
+				'Per GSTN',
+			],
+			Documents: [
+				'Sales details for the month in Excel, JSON, or any accounting software such as Tally, Zoho Books, etc.',
+				'Purchase details in Excel or any accounting software such as Tally, Zoho Books',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Salary Basic ITR-1 Plan',
+			price: '₹997',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Salary Income - Single & Multiple Employers',
+				},
+				{
+					title: 'Rental income up to 3 properties',
+				},
+				{
+					title: 'Interest and Dividend Incomes',
+				},
+				{
+					title: 'Agriculture Income',
+				},
+			],
+			applicableTo: [
+				'Basic Tax Planning',
+				'New & Old regime comparison',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Salary less than ₹50 lakhs',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Bank statement if interest received is above ₹10,000',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Annual Information Statement (AIS)',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Salary Pro ITR-2 Plan',
+			price: '₹1,997',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Salary Income - Single & Multiple Employers',
+				},
+				{
+					title: 'ESOP / ESSP / RSU holding (Reporting only)',
+				},
+				{
+					title: 'Rental Income - up to 5 properties',
+				},
+				{
+					title: 'Interest and Dividend Incomes',
+				},
+				{
+					title: 'Arrears of salary - Sec 89 Relief',
+				},
+				{
+					title: 'Shareholder / Director in Unlisted Company / Partner in a firm',
+				},
+			],
+			applicableTo: [
+				'Advanced Tax Planning',
+				'New & Old regime comparison',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Salary Above ₹50 lakhs',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Bank statement if interest received is above ₹10,000',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Annual Information Statement (AIS)',
+				'Filled up schedule AL',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'House Property Pro Plan',
+			price: '₹2,497',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Includes all income in ITR Pro Plan',
+				},
+				{
+					title: 'Salary Income - Single & Multiple Employers',
+				},
+				{
+					title: 'Rental Income - unlimited properties',
+				},
+				{
+					title: 'Interest and Dividend Incomes',
+				},
+				{
+					title: 'Arrears of salary - Sec 89 Relief',
+				},
+				{
+					title: 'Shareholder / Director in Unlisted Company / Partner in a firm',
+				},
+			],
+			applicableTo: [
+				'Advanced Tax Planning',
+				'New & Old regime comparison',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Salary Above ₹50 lakhs',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Bank statement if interest received is above ₹10,000',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Annual Information Statement (AIS)',
+				'Filled up schedule AL',
+				'Rental Income details',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Capital Gain Basic Plan',
+			price: '₹2,997',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Includes all income in Salary Pro Plan',
+				},
+				{
+					title: 'Capital Gain / Loss:',
+					subFeatures: [
+						'Up to 5 Sales of Properties (Land & Building)',
+						'Up to 5 Brokerage (Stocks & Mutual Funds) / CAMS / KFINTECH / Portfolio Statements',
+						'Sale of Unlimited Agricultural Properties',
+					],
+				},
+			],
+			applicableTo: [
+				'Capital Gain Tax Exemption Planning',
+				'Tax Loss Harvesting Advisory',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Support to Obtain All Statements',
+				'Only for Long / Short Term Capital Gain',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Annual Information Statement (AIS)',
+				'Bank Statements',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Rental Agreements & Property Tax Receipts',
+				'Investment / Portfolio Statements',
+				'Trading Account Statements',
+				'CAMS / KFINTECH / Mutual Fund Statements',
+				'Property Sale & Purchase Deed',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Freelancer / Trader Plan',
+			price: '₹3,497',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Includes all income in Capital Gain Basic Plan',
+				},
+				{
+					title: 'Trading:',
+					subFeatures: [
+						'Intraday',
+						'Futures & Options',
+						'Crypto',
+					],
+				},
+				{
+					title: 'Business / Professional Income under presumptive taxation scheme:',
+					subFeatures: [
+						'Businesses with annual turnover under ₹2 Cr',
+						'Professionals & Freelancers with annual gross receipts under ₹50 Lakh',
+					],
+				},
+				{
+					title: 'Any other casual income',
+				},
+			],
+			applicableTo: [
+				'Capital Gain Tax Exemption Planning',
+				'Tax Loss Harvesting Advisory',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Self-Employed individuals',
+				'Without detailed Financial statements / Audit',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Annual Information Statement (AIS)',
+				'Bank statements',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Rental agreements & Property tax receipts',
+				'Investment / portfolio statements',
+				'Trading account statements',
+				'CAMS / KFINTECH / Mutual fund statements',
+				'Property Sale & Purchase deed',
+				'Business Information, Turnover / Gross receipts details',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Capital Gain Pro / NRI Plan',
+			price: '₹4,497',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'Includes all income in Capital Gain Basic Plan',
+				},
+				{
+					title: 'Capital Gain / Loss & Trading Income from:',
+					subFeatures: [
+						'Intraday / Futures & Options / Crypto',
+						'Sale of ESOP or RSU and tax',
+						'Sale of Foreign Shares - shares listed in Nasdaq, NYSE',
+						'Declaration of foreign assets for Indian residents (Schedules FA / FSI and TR in the Income Tax Return)',
+					],
+				},
+				{
+					title: 'Filing of your Form 67 / double taxation avoidance (DTAA)',
+				},
+				{
+					title: 'Foreign Income to residents in India / Foreign nationals who earned salary in India or have India sourced income like capital gains, interest income or dividend income etc / Indian citizens who are permanently residing outside India but have some assets in India which generate income.',
+				},
+				{
+					title: 'Salary plus trading',
+				},
+			],
+			applicableTo: [
+				'Capital Gain Tax Exemption Planning',
+				'Tax Loss Harvesting Advisory',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Support to get all statements',
+				'Indian citizens outside India',
+				'Indian citizens who have worked at client locations outside India',
+				'Foreign nationals who have worked any time during last FY in India',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Annual Information Statement (AIS)',
+				'Bank statements',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Rental agreements & Property tax receipts',
+				'Investment / portfolio statements',
+				'Trading account statements',
+				'CAMS / KFINTECH / Mutual fund statements',
+				'Property Sale & purchase deed',
+				'ESOP / RSU / Foreign Dividend statements',
+				'Foreign Income Statements',
+			],
+		},
+		{
+			type: 'itr',
+			title: 'Business / Profession Plan',
+			price: '₹5,497',
+			priceDuration: '',
+			planFeatures: [
+				{
+					title: 'All incomes in Capital Gain Basic Plan',
+				},
+				{
+					title: 'Business owner with turnover more than ₹2 Cr up to ₹5 Cr during the year and for whom tax audit is required',
+				},
+				{
+					title: 'Professional / Freelancers with receipts more than ₹50 Lakhs up to ₹5 Cr during the year and for whom tax audit is required',
+				},
+				{
+					title: 'GST reconciliation and matching',
+				},
+				{
+					title: 'Preparation of summary profit and loss statement and balance sheet',
+				},
+			],
+			applicableTo: [
+				'Advance tax planning',
+				'Email / WhatsApp Support',
+				'1 Return Revision',
+				'Single or multiple Business / Profession combined turnover up to ₹5 Cr',
+				'Accounting fees / Tax audit fees are not included in the pricing of the plan',
+			],
+			Documents: [
+				'Form 16 (Part A, Part B & Annexure to Part B)',
+				'Form 26AS',
+				'Annual Information Statement (AIS)',
+				'March 2024 Payslip or Annual Tax Statement',
+				'Rental agreements & Property tax receipts',
+				'Investment / portfolio statements',
+				'Trading account statements',
+				'CAMS / KFINTECH / Mutual fund statements',
+				'Property Sale & purchase deed',
+				'Business and GST Information',
+				'Bank statements',
+				'Turnover / Gross receipts details',
+			],
+		},
+	];
+
 	const [activeTestimonial, setActiveTestimonial] = useState(0);
 	const [translateX, setTranslateX] = useState(0);
 	const [scrollDirection, setScrollDirection] = useState('right');
+	const [planType, setPlanType] = useState('tds');
+	const [currentPlans, setCurrentPlans] = useState(toggleCurrentPlans(planType));
 
 	document.addEventListener('scroll', () => {
 	    let header = document.getElementById("header");
@@ -28,6 +516,19 @@ function Homepage() {
 	    	header.style.boxShadow = "";
 	    }
 	});
+
+	function toggleCurrentPlans(planType) {
+
+		let _currentPlans = [];
+
+		plans.forEach((plan, index) => {
+			if (plan.type === planType) {
+				_currentPlans.push(plan);
+			}
+		});
+
+		return _currentPlans;
+	}
 
 	function scrollTestimonial(direction) {
 
@@ -101,7 +602,7 @@ function Homepage() {
         });
     }
 
-    // function need to be optimized
+    // function needs to be optimized
     function togglePlanType(planType) {
 
 		let tds = document.getElementById("tds");
@@ -111,43 +612,45 @@ function Homepage() {
 		if (planType == "tds" && !tds.classList.contains("text-white")) {
 
 			itr.classList.remove("text-white");
-			itr.classList.remove("bg-[#4f1e8e]");
+			itr.classList.remove("bg-[#082d60]");
 
 			gst.classList.remove("text-white");
-			gst.classList.remove("bg-[#4f1e8e]");
+			gst.classList.remove("bg-[#082d60]");
 
 			tds.classList.add("text-white");
-			tds.classList.add("bg-[#4f1e8e]");
+			tds.classList.add("bg-[#082d60]");
 
-			// setCurrentPricingPlans(monthlyPricingPlans);
+			setPlanType("tds");
 
 		} else if (planType == "itr" && !itr.classList.contains("text-white")) {
 
 			tds.classList.remove("text-white");
-			tds.classList.remove("bg-[#4f1e8e]");
+			tds.classList.remove("bg-[#082d60]");
 
 			gst.classList.remove("text-white");
-			gst.classList.remove("bg-[#4f1e8e]");
+			gst.classList.remove("bg-[#082d60]");
 
 			itr.classList.add("text-white");
-			itr.classList.add("bg-[#4f1e8e]");
+			itr.classList.add("bg-[#082d60]");
 
-			// setCurrentPricingPlans(yearlyPricingPlans);
+			setPlanType("itr");
 
 		} else if (planType == "gst" && !gst.classList.contains("text-white")) {
 
 			tds.classList.remove("text-white");
-			tds.classList.remove("bg-[#4f1e8e]");
+			tds.classList.remove("bg-[#082d60]");
 
 			itr.classList.remove("text-white");
-			itr.classList.remove("bg-[#4f1e8e]");
+			itr.classList.remove("bg-[#082d60]");
 
 			gst.classList.add("text-white");
-			gst.classList.add("bg-[#4f1e8e]");
+			gst.classList.add("bg-[#082d60]");
 
-			// setCurrentPricingPlans(yearlyPricingPlans);
+			setPlanType("gst");
 
 		}
+		setCurrentPlans(toggleCurrentPlans(planType));
+		console.log(currentPlans);
 	}
 
 	useEffect(() => {
@@ -509,7 +1012,7 @@ function Homepage() {
 									</div>
 								</div>
 			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#98ff88] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+			                <div className="flex flex-col justify-between gap-[50px] bg-[#67ac5c] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
 			                	<div className="">
 			                		Wert Consultancy is a highly recommended firm for addressing financial queries. They ensure timely services and provide excellent guidance on all financial matters.
 			                	</div>
@@ -586,254 +1089,15 @@ function Homepage() {
 				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
 					Plans based on your selection
 				</div>
-				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto my-[50px] rounded-[50px] text-[14px] flex items-center">
-					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("tds")}>TDS</span>
-					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#4f1e8e] text-white py-[10px]" onClick={() => togglePlanType("itr")}>Income Tax</span>
+				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto my-[50px] rounded-[50px] text-[14px] flex items-center font-semibold">
+					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#082d60] text-white" onClick={() => togglePlanType("tds")}>TDS</span>
+					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("itr")}>Income Tax</span>
 					<span id="gst" className="cursor-pointer rounded-[50px] px-[20px] py-[10px]" onClick={() => togglePlanType("gst")}>GST</span>
 				</div>
-				<div className="grid xl:grid-cols-3 min-[700px]:grid-cols-2 grid-cols-1 gap-[30px]">
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">Salary & House property Plan</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">2,599</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">Business & Professional Plan</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">1,299</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Business & Professional Income (Non Audit) - Without B/S P/L*</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">Capital Gain Plan</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">1,499</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Multiple Capital Gain Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Business & Professional Income (Non Audit) - Without B/S P/L*</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">Future & Options Plan</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">2,599</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>F&O Income/Loss(Non Audit)</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Speculative Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Multiple Capital Gain Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">Crypto Currency Plan</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">3,799</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Crypto Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>F&O Income/Loss(Non Audit)</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Speculative Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Multiple Capital Gain Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
-					<div className="bg-[#f5f5f5] p-[30px] rounded-[10px]">
-						<div className="font-bold text-[24px] h-[80px] text-center">NRI/Resident Having Foreign Income</div>
-						<div className="mt-[20px] flex items-center">
-							<div className="text-[48px] font-bold">3,799</div>
-							<div className="ml-[10px] text-[18px]">/ Year</div>
-						</div>
-						<div className="text-[18px] mt-[-5px]">*Exclusive of Taxes</div>
-						<div className="mt-[30px] mb-[20px] font-bold text-[16px] text-[#0077b6]">SUITED FOR:</div>
-						<div className="flex flex-col gap-[20px]">
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Foreign salary(Including Foreign Tax relief)</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>DTAA Tax Relief</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple Employers</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Single & Multiple House Property</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Multiple Capital Gain Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>RSU/ESOP</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Business & Professional Income(Non Audit)- Without B/S P/L*</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Crypto Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>F&O Income/Loss(Non Audit)</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Speculative Income</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Income from Other Sources</span>
-							</div>
-							<div className="flex gap-[10px] items-start">
-								<Check />
-								<span>Agriculture Income</span>
-							</div>
-						</div>
-					</div>
+				<div className={`w-fit mx-auto grid gap-[30px] min-[700px]:grid-cols-2 grid-cols-1 ${(planType === 'tds') ? '' : 'xl:grid-cols-3'}`}>
+					{currentPlans.map((currentPlan, i) => 
+						<PlanCard plan={currentPlan} />
+					)}
 				</div>
 			</div>
 			<div className="bg-[#071E22]">
