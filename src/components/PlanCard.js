@@ -36,7 +36,7 @@ export default function PlanCard({plan, planDuration, openCardModal}) {
 						</div>
 		            );
 		        })}
-		        <div className="text-[18px] h-full font-medium text-center cursor-pointer w-fit text-[blue] hover:underline underline-offset-4 decoration-2 ml-auto mt-auto">
+		        <div className="text-[18px] h-full font-medium text-center cursor-pointer w-fit text-[#0068ff] hover:underline underline-offset-4 decoration-2 ml-auto mt-auto">
 					<div onClick={() => openCardModal(plan)}>Show More >></div>
 				</div>
 			</div>

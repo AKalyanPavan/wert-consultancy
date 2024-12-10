@@ -802,7 +802,7 @@ function Homepage() {
 			            </div>
 		            </div>
 		            <div className="max-w-[500px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
-		            	<div className="text-[25px] text-white font-medium mb-[30px]">Try Wert Consultancy for free!</div>
+		            	<div className="text-[25px] text-white font-medium mb-[30px]">Get Your First Consultation at Wert Consultancy—Completely Free!</div>
 		            	<div className="flex flex-col gap-[20px]">
 		            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
 		            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
@@ -850,7 +850,7 @@ function Homepage() {
 							Expert Assisted ITR Filing
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Hire personal eCA to do Income Tax Filing for you. It is convenient & fast, with maximum refund calculated for you.
+							Experts to do Income Tax Filing for you. It is convenient & fast, with maximum eligible refund calculated for you.
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
@@ -863,26 +863,18 @@ function Homepage() {
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] h-[50px]">
-							NRI Tax Filing
+							Foreign Income Tax Filing
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Ease your Indian tax filing with our experts, covering both foreign and domestic income. Our online CA ensures compliance with the Income tax laws and help you claim eligible tax deductions.
+							Ease your Indian tax filing with our experts, covering both foreign income like RSU / ESOP / ESSP. We ensure compliance with the Income tax laws and help you declare foreign income and claim eligible tax deductions.
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] h-[50px]">
-							File ITR Yourself (DIY filing )
+							E-commerce, SEZ &. Export Refunds
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Trust us; you can file your Income tax return on your own. It’s fast, easy, and safe when you file ITR with Tax2win on your own.
-						</div>
-					</div>
-					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Upload Form 16
-						</div>
-						<div className="text-[#6b6b6b] mt-[10px]">
-							Simplify the Income Tax Return filing process at Tax2win. Just upload your Form 16 and get the ITR prepared automatically.
+							Our expert handles all GST and Income tax compliance for sellers in E commerce and Business in SEZ and help claim benefits under SEZ.We will help you get your GST refund of ITC on export of goods and services under LUT/Bond and Accumulated unutilized ITC.
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
@@ -891,6 +883,22 @@ function Homepage() {
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
 							Seeking tax expert advice on the transaction done with respect to the sale of property, equity shares, mutual fund units, or bonds in addition to salary/business income.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							Domestic and International Bookkeeping
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Our team keeps your transactions in order and provides monthly financial reports. Access an up-to-date summary of your earnings and spending anytime, without waiting for final reports.We are expert in Tally,Quickbooks, Zoho books, MYOB and Xero. we can handle US, UK, Netherlands, Australia and UAE bookkeeping.
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] h-[50px]">
+							US Tax preparation
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							Our team of experienced accountants specializes in individual and business tax preparation to meet your practice’s needs. We’re flexible and work with your preferred software to provide reliable, efficient, and high-quality accounting and bookkeeping services but we are already comfortable with CCH products. From preparing 1099s to preparing complex 1065,1120,1120S, 1041 and 1040 we can help prepare the tax returns with provided infrastructure.
 						</div>
 					</div>
 				</div>
@@ -1177,7 +1185,10 @@ function Homepage() {
 							<span id="monthly" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanDuration("monthly")}>Monthly</span>
 							<span id="yearly" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#082d60] text-white" onClick={() => togglePlanDuration("yearly")}>Yearly</span>
 						</div>
-						<div className="text-center mt-[20px] text-[#0068ff] text-[18px] font-normal"><span>*</span>pay for 10 months and get 2 months free, save 8.33% we offer discount more than your FD interest.</div>
+						<div className="text-center mt-[20px] text-[#0068ff] text-[18px] font-normal">
+							<span>*</span>
+							Save *8.33% - Pay for 10 months ( We offer 2 months for free).
+						</div>
 					</>
 				}
 				<div className={`w-fit mx-auto grid gap-[30px] min-[700px]:grid-cols-2 grid-cols-1 mt-[50px] ${(planType === 'tds') ? '' : 'xl:grid-cols-3'}`}>
