@@ -747,7 +747,7 @@ function Homepage() {
 		    openThankYouModal();
 
 		    // Closing thank-you modal
-		    setTimeout(closeThankYouModal, 5000);
+		    setTimeout(closeThankYouModal, 4000);
 		}
     }
 
@@ -812,7 +812,7 @@ function Homepage() {
             </div>
 
             {/*"Thank You" Modal*/}
-            <div id="thankYouModal" className="w-[100%] h-[100%] bg-[#494949c4] fixed z-[4]">
+            <div id="thankYouModal" className="w-[100%] h-[100%] bg-[#494949c4] fixed z-[4] hidden">
 		        <div style={{
 		              transform: "translate(-50%, -50%)"
 		            }}
@@ -823,7 +823,7 @@ function Homepage() {
 		                </svg>
 		            </div>
 		            <div className="text-[30px] font-semibold my-[20px] text-center">Thank You!</div>
-		            <div className="">We'll reach You Out Soon!</div>
+		            <div className="font-normal">We'll reach you out soon!</div>
 		            <div className="bg-[#ca3535] text-[#FFFFFF] cursor-pointer rounded-[5px] my-[20px] w-max mx-auto px-[20px] font-medium" onClick={() => closeThankYouModal()}>Close</div>
 		        </div>
 		    </div>
