@@ -740,7 +740,25 @@ function Homepage() {
     		return;
     	}
 
-    	if (!isError) {
+		fetch("https://seobot.centilio.com/track_submit", {
+			method: "POST",
+			body: JSON.stringify({
+				"parms": {
+					"First_Name": companyInput.value,
+					"Email": emailInput.value,
+					"Phone": mobileInput.value,
+				},
+				"account_id": "sds",
+				"connector_id": "dsdskds",
+			}),
+			headers: {
+				"Content-type": "application/json; charset=UTF-8",
+			}
+		})
+		.then((response) => response.json())
+		.then((json) => console.log(json));
+
+		if (!isError) {
       
 		    // Making input values empty
 		    companyInput.value = "";
