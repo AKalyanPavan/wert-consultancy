@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c3421397.css",
+    "main.js": "/static/js/main.d76937ae.js",
+    "static/media/freelancers.png": "/static/media/freelancers.fae6ac9222546d2f76d0.png",
+    "static/media/sme-business.png": "/static/media/sme-business.875be9d501d58c76e720.png",
+    "static/media/logo.svg": "/static/media/logo.2416b61a09349482f20ec62a671efc71.svg",
+    "static/media/consultants.png": "/static/media/consultants.399d8923e81c78125f1a.png",
+    "static/media/star.svg": "/static/media/star.91314e4c6a29420bc591794fe2be8f15.svg",
+    "static/media/ss-tech.svg": "/static/media/ss-tech.76b21c4f67555df609585f19f6e1cebd.svg",
+    "static/media/dhivesh-pm.svg": "/static/media/dhivesh-pm.03df58dd511f2c075f3715d615daaa16.svg",
+    "static/media/nithya-ragunathasamy.svg": "/static/media/nithya-ragunathasamy.f6755f36988625d75cfe215b9e7e7b54.svg",
+    "index.html": "/index.html",
+    "static/media/registration-icon.svg": "/static/media/registration-icon.e7d8677d23448a9532d3a48844ba55c7.svg",
+    "main.c3421397.css.map": "/static/css/main.c3421397.css.map",
+    "main.d76937ae.js.map": "/static/js/main.d76937ae.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3421397.css",
+    "static/js/main.d76937ae.js"
+  ]
+}

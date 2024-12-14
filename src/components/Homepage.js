@@ -12,10 +12,10 @@ import nithyaRagunathasamy from './../images/nithya-ragunathasamy.svg';
 import dhiveshPM from './../images/dhivesh-pm.svg';
 import star from './../images/star.svg';
 
-import Check from './Check.js';
 import PlanCard from './PlanCard.js';
 import PlanModal from './PlanModal.js';
 
+import { v4 as uuidv4 } from 'uuid';
 
 function Homepage() {
 
@@ -514,17 +514,18 @@ function Homepage() {
 	const [planDuration, setPlanDuration] = useState('yearly');
 	const [modalDisplay, setModalDisplay] = useState('hidden');
 	const [modalPlan, setModalPlan] = useState(plans[0]);
+	const [showSuccess, setShowSuccess] = useState(true);
 
 	const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 	const phoneRegex = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 
 	document.addEventListener('scroll', () => {
-	    let header = document.getElementById("header");
-	    if (window.scrollY > 20) {
-	    	header.style.boxShadow = "0 0 15px -1px #00000014";
-	    } else {
-	    	header.style.boxShadow = "";
-	    }
+		let header = document.getElementById("header");
+		if (window.scrollY > 20) {
+			header.style.boxShadow = "0 0 15px -1px #00000014";
+		} else {
+			header.style.boxShadow = "";
+		}
 	});
 
 	function toggleCurrentPlans(planType) {
@@ -570,76 +571,76 @@ function Homepage() {
 
 		let scrollArrows = document.getElementsByClassName("scrollArrow");
 
-	    let testimonialContainerFixed = document.getElementById("testimonialContainerFixed");
-	    let testimonialContainerParent = document.getElementById("testimonialContainerParent");
-	    let testimonial = document.getElementsByClassName("testimonial")[0];
-	    let testimonialIndex = document.getElementsByClassName("testimonialIndex");
+		let testimonialContainerFixed = document.getElementById("testimonialContainerFixed");
+		let testimonialContainerParent = document.getElementById("testimonialContainerParent");
+		let testimonial = document.getElementsByClassName("testimonial")[0];
+		let testimonialIndex = document.getElementsByClassName("testimonialIndex");
 
-	    let transformValue;
-	    let translateXValue;
+		let transformValue;
+		let translateXValue;
 
-	    if (direction == "initialLeft") {
+		if (direction == "initialLeft") {
 
-	      translateXValue = ( ( (testimonialContainerFixed.clientWidth ) - ( (testimonial.clientWidth * 3) + (2 * 20)) ) / 2 );
-	      transformValue = `translateX(${translateXValue}px)`;
-	      setTranslateX(translateXValue);
+			translateXValue = (((testimonialContainerFixed.clientWidth) - ((testimonial.clientWidth * 3) + (2 * 20))) / 2);
+			transformValue = `translateX(${translateXValue}px)`;
+			setTranslateX(translateXValue);
 
-	    } else if (direction == "left" && activeTestimonial > 0) {
+		} else if (direction == "left" && activeTestimonial > 0) {
 
-	    	for (var i = 0; i < scrollArrows.length; i++) {
+			for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.add("pointer-events-none");
 			}
 
-	      translateXValue = translateX + testimonial.clientWidth + 20;
-	      transformValue = `translateX(${translateXValue}px)`;
-	      setTranslateX(translateXValue);
+			translateXValue = translateX + testimonial.clientWidth + 20;
+			transformValue = `translateX(${translateXValue}px)`;
+			setTranslateX(translateXValue);
 
-	      // setTimeout(function(){
-	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
-	        testimonialIndex[activeTestimonial - 1].children[0].setAttribute("fill", "#ffc94d");
-	        setActiveTestimonial(activeTestimonial - 1);
-	        for (var i = 0; i < scrollArrows.length; i++) {
+			// setTimeout(function(){
+			testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
+			testimonialIndex[activeTestimonial - 1].children[0].setAttribute("fill", "#ffc94d");
+			setActiveTestimonial(activeTestimonial - 1);
+			for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.remove("pointer-events-none");
 			}
-	      // }, 500);
+			// }, 500);
 
-	    } else if (direction == "right" && activeTestimonial < 5) {
+		} else if (direction == "right" && activeTestimonial < 5) {
 
-	    	for (var i = 0; i < scrollArrows.length; i++) {
+			for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.add("pointer-events-none");
 			}
 
-	      translateXValue = translateX - testimonial.clientWidth - 20;
-	      transformValue = `translateX(${translateXValue}px)`;
-	      setTranslateX(translateXValue);
+			translateXValue = translateX - testimonial.clientWidth - 20;
+			transformValue = `translateX(${translateXValue}px)`;
+			setTranslateX(translateXValue);
 
-	      // setTimeout(function(){
-	        testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
-	        testimonialIndex[activeTestimonial + 1].children[0].setAttribute("fill", "#ffc94d");
-	        setActiveTestimonial(activeTestimonial + 1);
-	        for (var i = 0; i < scrollArrows.length; i++) {
+			// setTimeout(function(){
+			testimonialIndex[activeTestimonial].children[0].setAttribute("fill", "#082d60");
+			testimonialIndex[activeTestimonial + 1].children[0].setAttribute("fill", "#ffc94d");
+			setActiveTestimonial(activeTestimonial + 1);
+			for (var i = 0; i < scrollArrows.length; i++) {
 				scrollArrows[i].classList.remove("pointer-events-none");
 			}
-	      // }, 500);
+			// }, 500);
 
-	    }
+		}
 
-	    testimonialContainerParent.style.transform = transformValue;
+		testimonialContainerParent.style.transform = transformValue;
 	}
 
 	function scrollPage(id) {
 
 		let element = document.getElementById(id);
 
-        window.scrollTo({
-            top: element.offsetTop - 120,
-            left: 0,
-            behavior: 'smooth'
-        });
-    }
+		window.scrollTo({
+			top: element.offsetTop - 120,
+			left: 0,
+			behavior: 'smooth'
+		});
+	}
 
-    // function needs to be optimized
-    function togglePlanType(planType) {
+	// function needs to be optimized
+	function togglePlanType(planType) {
 
 		let tds = document.getElementById("tds");
 		let itr = document.getElementById("itr");
@@ -690,122 +691,125 @@ function Homepage() {
 
 		setModalPlan(plan);
 
-        let modal = document.querySelector("#modal");
-        
-        if (modal) {
-            modal.style.animationName = "slideIn"
-            setModalDisplay("");
-        }
-    }
+		let modal = document.querySelector("#modal");
+
+		if (modal) {
+			modal.style.animationName = "slideIn"
+			setModalDisplay("");
+		}
+	}
 
 	function onModalOverlayClicked(event) {
 
-        let modal = document.querySelector("#modal");
+		let modal = document.querySelector("#modal");
 
-        if (modal) {
-            modal.style.animationName = "slideOut"
-            setTimeout(() => {
-                setModalDisplay("hidden");
-            }, 180);
-        }
-    }
-
-    function validateInput(companyId, emailId, mobileId, errorCompanyId, errorEmailId, errorMobileId) {
-
-    	const companyInput = document.getElementById(companyId);
-    	const emailInput = document.getElementById(emailId);
-    	const mobileInput = document.getElementById(mobileId);
-
-    	let errorCompany = document.getElementById(errorCompanyId);
-    	let errorEmail = document.getElementById(errorEmailId);
-    	let errorMobile = document.getElementById(errorMobileId);
-
-    	let isError = false;
-
-    	if (!companyInput.value.trim()) {
-    		errorCompany.classList.remove("hidden");
-    		isError = true;
-    		return;
-    	}
-
-    	if (!emailRegex.test(emailInput.value)) {
-    		errorEmail.classList.remove("hidden");
-    		isError = true;
-    		return;
-    	}
-
-    	if (!phoneRegex.test(mobileInput.value)) {
-    		errorMobile.classList.remove("hidden");
-    		isError = true;
-    		return;
-    	}
-
-		fetch("https://seobot.centilio.com/track_submit", {
-			method: "POST",
-			body: JSON.stringify({
-				"parms": {
-					"First_Name": companyInput.value,
-					"Email": emailInput.value,
-					"Phone": mobileInput.value,
-				},
-				"account_id": "sds",
-				"connector_id": "dsdskds",
-			}),
-			headers: {
-				"Content-type": "application/json; charset=UTF-8",
-			}
-		})
-		.then((response) => response.json())
-		.then((json) => console.log(json));
-
-		if (!isError) {
-      
-		    // Making input values empty
-		    companyInput.value = "";
-		    emailInput.value = "";
-		    mobileInput.value = "";
-
-		    // Opening thank-you modal
-		    openThankYouModal();
-
-		    // Closing thank-you modal
-		    setTimeout(closeThankYouModal, 4000);
+		if (modal) {
+			modal.style.animationName = "slideOut"
+			setTimeout(() => {
+				setModalDisplay("hidden");
+			}, 180);
 		}
-    }
+	}
 
-    function onInputClicked(input, error) {
+	async function validateInput(companyId, emailId, mobileId, errorCompanyId, errorEmailId, errorMobileId) {
 
-    	let inputElement = document.getElementById(input);
-    	let errorElement = document.getElementById(error);
+		const companyInput = document.getElementById(companyId);
+		const emailInput = document.getElementById(emailId);
+		const mobileInput = document.getElementById(mobileId);
 
-    	if (!errorElement.classList.contains("hidden")) {
-    		errorElement.classList.add("hidden");
-    	}
+		let errorCompany = document.getElementById(errorCompanyId);
+		let errorEmail = document.getElementById(errorEmailId);
+		let errorMobile = document.getElementById(errorMobileId);
 
-    	inputElement.focus();
-    }
+		let isError = false;
 
-    function openThankYouModal() {
+		if (!companyInput.value.trim()) {
+			errorCompany.classList.remove("hidden");
+			isError = true;
+		}
 
-	    let thankYouModal = document.getElementById("thankYouModal");
+		if (!emailRegex.test(emailInput.value)) {
+			errorEmail.classList.remove("hidden");
+			isError = true;
+		}
 
-	    if (thankYouModal.classList.contains("hidden")) {
-	        thankYouModal.classList.remove("hidden");
-	    }
+		if (!phoneRegex.test(mobileInput.value)) {
+			errorMobile.classList.remove("hidden");
+			isError = true;
+		}
+
+		if (isError) {
+			return;
+		}
+
+		try {
+			const response = await fetch("https://seobot.centilio.com/track_submit", {
+				method: "POST",
+				body: JSON.stringify({
+					params: {
+						First_Name: companyInput.value,
+						Email: emailInput.value,
+						Phone: mobileInput.value,
+					},
+					account_id: "345",
+				})
+			});
+
+			if (!response.ok) {
+				throw new Error(`HTTP error! status: ${response.status}`);
+			}
+
+			await response.json();
+
+			// Success: Clear input fields and show the thank-you modal
+			companyInput.value = "";
+			emailInput.value = "";
+			mobileInput.value = "";
+
+			setShowSuccess(true);
+			openThankYouModal();
+			setTimeout(closeThankYouModal, 4000);
+		} catch (error) {
+			setShowSuccess(false);
+			openThankYouModal();
+			setTimeout(closeThankYouModal, 4000);
+			console.error("Request failed:", error);
+		}
+	}
+
+	function onInputClicked(input, error) {
+
+		let inputElement = document.getElementById(input);
+		let errorElement = document.getElementById(error);
+
+		if (!errorElement.classList.contains("hidden")) {
+			errorElement.classList.add("hidden");
+		}
+
+		inputElement.focus();
+	}
+
+	function openThankYouModal() {
+
+		let thankYouModal = document.getElementById("thankYouModal");
+
+		if (thankYouModal.classList.contains("hidden")) {
+			thankYouModal.classList.remove("hidden");
+		}
 	}
 
 	function closeThankYouModal() {
 
-	    let thankYouModal = document.getElementById("thankYouModal");
+		let thankYouModal = document.getElementById("thankYouModal");
 
-	    if(!thankYouModal.classList.contains("hidden")){
-	        thankYouModal.classList.add("hidden");
-	    }
+		if (!thankYouModal.classList.contains("hidden")) {
+			thankYouModal.classList.add("hidden");
+		}
 	}
 
 	useEffect(() => {
 
-		const interval =setInterval(() => {
+		const interval = setInterval(() => {
 
 			if (activeTestimonial == 5) {
 				setScrollDirection('left');
@@ -815,69 +819,76 @@ function Homepage() {
 
 			scrollTestimonial(scrollDirection);
 
-        }, 4000);
+		}, 4000);
 
-        return () => clearInterval(interval);
+		return () => clearInterval(interval);
 	}, [activeTestimonial, scrollDirection]);
 
-	return(
+	return (
 		<>
 			{/*Modal*/}
-            <div 
-                id="modalOverlay" 
-                className={"w-[100%] bg-[#000000ab] fixed top-[0px] left-[0px] h-[100%] z-[5] " + modalDisplay}>
+			<div
+				id="modalOverlay"
+				className={"w-[100%] bg-[#000000ab] fixed top-[0px] left-[0px] h-[100%] z-[5] " + modalDisplay}>
 
-                <div 
-                    style={{
-                        animationName: "slideIn",
-                        animationDuration: "0.5s",
-                        transform: "translate(-50%, -50%)",
-                        maxHeight: "calc(100vh - 150px)",
-                        overflowY: "auto",
-                    }}
-                    id="modal" 
-                    className={"w-[80%] min-[500px]:w-[400px] bg-[#d7e9f7] fixed top-[50%] left-[50%] rounded-[20px] " + modalDisplay}>
+				<div
+					style={{
+						animationName: "slideIn",
+						animationDuration: "0.5s",
+						transform: "translate(-50%, -50%)",
+						maxHeight: "calc(100vh - 150px)",
+						overflowY: "auto",
+					}}
+					id="modal"
+					className={"w-[80%] min-[500px]:w-[400px] bg-[#d7e9f7] fixed top-[50%] left-[50%] rounded-[20px] " + modalDisplay}>
 
-                    <div className="max-w-[400px]">
-                    	<PlanModal plan={modalPlan} planDuration={planDuration} onModalOverlayClicked={onModalOverlayClicked} />
-                    </div>
+					<div className="max-w-[400px]">
+						<PlanModal plan={modalPlan} planDuration={planDuration} onModalOverlayClicked={onModalOverlayClicked} key={uuidv4()} />
+					</div>
 
-                </div>
-            </div>
+				</div>
+			</div>
 
-            {/*"Thank You" Modal*/}
-            <div id="thankYouModal" className="w-[100%] h-[100%] bg-[#494949c4] fixed z-[4] hidden">
-		        <div style={{
-		              transform: "translate(-50%, -50%)"
-		            }}
-		            className="text-[#082d60] fixed bg-[#d7e9f7] top-[50%] left-[50%] py-[30px] sm:min-w-[400px] min-w-[300px] px-[20px] rounded-[10px] z-[5] leading-[35px]">
-		            <div className="bg-[#082d60] w-max px-[10px] py-[15px] rounded-[50%] mx-auto">
-		                <svg width="40" height="32" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-		                    <path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-		                </svg>
-		            </div>
-		            <div className="text-[30px] font-semibold my-[20px] text-center">Thank You!</div>
-		            <div className="font-normal text-center">We'll reach you out soon!</div>
-		            <div className="bg-[#ca3535] text-[#FFFFFF] cursor-pointer rounded-[5px] my-[20px] w-max mx-auto px-[20px] font-medium" onClick={() => closeThankYouModal()}>Close</div>
-		        </div>
-		    </div>
+			{/*"Thank You" Modal*/}
+			<div id="thankYouModal" className="w-[100%] h-[100%] bg-[#494949c4] fixed z-[4] hidden">
+				<div style={{ transform: "translate(-50%, -50%)" }}
+					className="text-[#082d60] fixed bg-[#d7e9f7] top-[50%] left-[50%] py-[30px] sm:min-w-[400px] min-w-[300px] px-[20px] rounded-[10px] z-[5] leading-[35px]">
+					{showSuccess ? (
+						<div>
+							<div className="bg-[#082d60] w-max px-[10px] py-[15px] rounded-[50%] mx-auto">
+								<svg width="40" height="32" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="#FFFFFF" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+							</div>
+							<div className="text-[30px] font-semibold my-[20px] text-center">Thank You!</div>
+							<div className="font-normal text-center">We'll reach you out soon!</div>
+						</div>
+					) : (
+						<div style={{ color: "rgb(202 53 53)" }}>
+							<div className="text-[30px] font-semibold my-[20px] text-center">Oops!</div>
+							<div className="font-normal text-center">Something went wrong.</div>
+						</div>
+					)}
+					<div className="bg-[#ca3535] text-[#FFFFFF] cursor-pointer rounded-[5px] my-[20px] w-max mx-auto px-[20px] font-medium" onClick={() => closeThankYouModal()}>Close</div>
+				</div>
+			</div>
 
 			<div id="header" className="sticky top-[0px] bg-[#d7e9f7] z-[1]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] py-[20px] flex items-center justify-between font-['Lexend']">
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 					<div className="flex items-center text-[#082d60] font-medium text-[18px]">
 						<div className="cursor-pointer mr-[20px] sm:block hidden" onClick={() => scrollPage("pricing")}>Pricing</div>
-						<a class="" href="tel:+916381637626">
-			              <div className="w-fit border-[solid] border-[1.5px] border-[#082d60] sm:px-[20px] px-[10px] py-[5px] rounded-[10px] items-center flex cursor-pointer">
-			                <div className="flex items-center border-[solid] pr-[5px] py-[5px]">
-			                  <svg width="20" height="20" viewBox="0 0 23 23" fill="#082d60" xmlns="http://www.w3.org/2000/svg">
-			                    <path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="#082d60" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-			                  </svg>
-			                </div>
-			                <span class="sm:block hidden">+91 638-163-7626</span>
-			                <span class="max-sm:block hidden">Call Us</span>
-			              </div>
-			            </a>
+						<a className="" href="tel:+916381637626">
+							<div className="w-fit border-[solid] border-[1.5px] border-[#082d60] sm:px-[20px] px-[10px] py-[5px] rounded-[10px] items-center flex cursor-pointer">
+								<div className="flex items-center border-[solid] pr-[5px] py-[5px]">
+									<svg width="20" height="20" viewBox="0 0 23 23" fill="#082d60" xmlns="http://www.w3.org/2000/svg">
+										<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="#082d60" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+								</div>
+								<span className="sm:block hidden">+91 638-163-7626</span>
+								<span className="max-sm:block hidden">Call Us</span>
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -889,46 +900,46 @@ function Homepage() {
 						</div>
 						<div className="flex flex-col gap-[10px] mt-[30px] text-black">
 							<div className="flex items-center">
-			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-			                	</svg>
-				                <div className="text-[18px] font-normal ml-[5px]">
-				                	Comprehensive GST solutions
-				                </div>
-				            </div>
-				            <div className="flex items-center">
-			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-			                	</svg>
-				                <div className="text-[18px] font-normal ml-[5px]">
-				                	Full financial compliance
-				                </div>
-				            </div>
-				            <div className="flex items-center">
-			                	<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                		<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-			                	</svg>
-				                <div className="text-[18px] font-normal ml-[5px]">
-				                	Seamless tax filing
-				                </div>
-				            </div>
-			            </div>
-		            </div>
-		            <div className="max-w-[520px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
-		            	<div className="text-[25px] text-white font-medium mb-[30px]">Get Your First Consultation at Wert Consultancy—Completely Free!</div>
-		            	<div className="flex flex-col gap-[20px]">
-		            		<div onClick={() => onInputClicked("firstSectionCompany", "errorFirstSectionCompany")}>
-			            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
-			            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
-			            				<path d="M8 2L8 6L4 6L4 48L15 48L15 39L19 39L19 48L30 48L30 6L26 6L26 2 Z M 10 10L12 10L12 12L10 12 Z M 14 10L16 10L16 12L14 12 Z M 18 10L20 10L20 12L18 12 Z M 22 10L24 10L24 12L22 12 Z M 32 14L32 18L34 18L34 20L32 20L32 22L34 22L34 24L32 24L32 26L34 26L34 28L32 28L32 30L34 30L34 32L32 32L32 34L34 34L34 36L32 36L32 38L34 38L34 40L32 40L32 42L34 42L34 44L32 44L32 48L46 48L46 14 Z M 10 15L12 15L12 19L10 19 Z M 14 15L16 15L16 19L14 19 Z M 18 15L20 15L20 19L18 19 Z M 22 15L24 15L24 19L22 19 Z M 36 18L38 18L38 20L36 20 Z M 40 18L42 18L42 20L40 20 Z M 10 21L12 21L12 25L10 25 Z M 14 21L16 21L16 25L14 25 Z M 18 21L20 21L20 25L18 25 Z M 22 21L24 21L24 25L22 25 Z M 36 22L38 22L38 24L36 24 Z M 40 22L42 22L42 24L40 24 Z M 36 26L38 26L38 28L36 28 Z M 40 26L42 26L42 28L40 28 Z M 10 27L12 27L12 31L10 31 Z M 14 27L16 27L16 31L14 31 Z M 18 27L20 27L20 31L18 31 Z M 22 27L24 27L24 31L22 31 Z M 36 30L38 30L38 32L36 32 Z M 40 30L42 30L42 32L40 32 Z M 10 33L12 33L12 37L10 37 Z M 14 33L16 33L16 37L14 37 Z M 18 33L20 33L20 37L18 37 Z M 22 33L24 33L24 37L22 37 Z M 36 34L38 34L38 36L36 36 Z M 40 34L42 34L42 36L40 36 Z M 36 38L38 38L38 40L36 40 Z M 40 38L42 38L42 40L40 40 Z M 10 39L12 39L12 44L10 44 Z M 22 39L24 39L24 44L22 44 Z M 36 42L38 42L38 44L36 44 Z M 40 42L42 42L42 44L40 44Z"/>
-			            			</svg>
-			            			<input id="firstSectionCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionCompany">Company name cannot be empty</div>
-		            		</div>
-		            		<div onClick={() => onInputClicked("firstSectionEmail", "errorFirstSectionEmail")}>
-			            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
-			            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 528.633 528.632">
+								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+								<div className="text-[18px] font-normal ml-[5px]">
+									Comprehensive GST solutions
+								</div>
+							</div>
+							<div className="flex items-center">
+								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+								<div className="text-[18px] font-normal ml-[5px]">
+									Full financial compliance
+								</div>
+							</div>
+							<div className="flex items-center">
+								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+								<div className="text-[18px] font-normal ml-[5px]">
+									Seamless tax filing
+								</div>
+							</div>
+						</div>
+					</div>
+					<div className="max-w-[520px] max-md:mx-auto md:ml-auto mt-[50px] bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
+						<div className="text-[25px] text-white font-medium mb-[30px]">Get Your First Consultation at Wert Consultancy—Completely Free!</div>
+						<div className="flex flex-col gap-[20px]">
+							<div onClick={() => onInputClicked("firstSectionCompany", "errorFirstSectionCompany")}>
+								<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
+									<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
+										<path d="M8 2L8 6L4 6L4 48L15 48L15 39L19 39L19 48L30 48L30 6L26 6L26 2 Z M 10 10L12 10L12 12L10 12 Z M 14 10L16 10L16 12L14 12 Z M 18 10L20 10L20 12L18 12 Z M 22 10L24 10L24 12L22 12 Z M 32 14L32 18L34 18L34 20L32 20L32 22L34 22L34 24L32 24L32 26L34 26L34 28L32 28L32 30L34 30L34 32L32 32L32 34L34 34L34 36L32 36L32 38L34 38L34 40L32 40L32 42L34 42L34 44L32 44L32 48L46 48L46 14 Z M 10 15L12 15L12 19L10 19 Z M 14 15L16 15L16 19L14 19 Z M 18 15L20 15L20 19L18 19 Z M 22 15L24 15L24 19L22 19 Z M 36 18L38 18L38 20L36 20 Z M 40 18L42 18L42 20L40 20 Z M 10 21L12 21L12 25L10 25 Z M 14 21L16 21L16 25L14 25 Z M 18 21L20 21L20 25L18 25 Z M 22 21L24 21L24 25L22 25 Z M 36 22L38 22L38 24L36 24 Z M 40 22L42 22L42 24L40 24 Z M 36 26L38 26L38 28L36 28 Z M 40 26L42 26L42 28L40 28 Z M 10 27L12 27L12 31L10 31 Z M 14 27L16 27L16 31L14 31 Z M 18 27L20 27L20 31L18 31 Z M 22 27L24 27L24 31L22 31 Z M 36 30L38 30L38 32L36 32 Z M 40 30L42 30L42 32L40 32 Z M 10 33L12 33L12 37L10 37 Z M 14 33L16 33L16 37L14 37 Z M 18 33L20 33L20 37L18 37 Z M 22 33L24 33L24 37L22 37 Z M 36 34L38 34L38 36L36 36 Z M 40 34L42 34L42 36L40 36 Z M 36 38L38 38L38 40L36 40 Z M 40 38L42 38L42 40L40 40 Z M 10 39L12 39L12 44L10 44 Z M 22 39L24 39L24 44L22 44 Z M 36 42L38 42L38 44L36 44 Z M 40 42L42 42L42 44L40 44Z" />
+									</svg>
+									<input id="firstSectionCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionCompany">Company name cannot be empty</div>
+							</div>
+							<div onClick={() => onInputClicked("firstSectionEmail", "errorFirstSectionEmail")}>
+								<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
+									<svg fill="#000000" width="30px" height="30px" viewBox="0 0 528.633 528.632">
 										<g>
 											<g>
 												<path d="M264.317,326.235c-13.739,0-26.659-5.349-36.371-15.067L0.692,83.914v356.863c0,16.897,13.703,30.601,30.6,30.601h466.044
@@ -938,22 +949,22 @@ function Homepage() {
 											</g>
 										</g>
 									</svg>
-			            			<input id="firstSectionEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionEmail">Please enter valid email address</div>
-		            		</div>
-		            		<div onClick={() => onInputClicked("firstSectionMobile", "errorFirstSectionMobile")}>
-			            		<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
-			            			<svg width="30" height="30" viewBox="0 0 23 23" fill="" xmlns="http://www.w3.org/2000/svg">
-			            				<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-			            			</svg>
-			            			<input id="firstSectionMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionMobile">Please provide valid phone number</div>
-			            	</div>
-			            	<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('firstSectionCompany', 'firstSectionEmail', 'firstSectionMobile', 'errorFirstSectionCompany', 'errorFirstSectionEmail', 'errorFirstSectionMobile')}>SUBMIT</div>
-		            	</div>
-		            </div>
+									<input id="firstSectionEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionEmail">Please enter valid email address</div>
+							</div>
+							<div onClick={() => onInputClicked("firstSectionMobile", "errorFirstSectionMobile")}>
+								<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
+									<svg width="30" height="30" viewBox="0 0 23 23" fill="" xmlns="http://www.w3.org/2000/svg">
+										<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+									<input id="firstSectionMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionMobile">Please provide valid phone number</div>
+							</div>
+							<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('firstSectionCompany', 'firstSectionEmail', 'firstSectionMobile', 'errorFirstSectionCompany', 'errorFirstSectionEmail', 'errorFirstSectionMobile')}>SUBMIT</div>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className="max-w-[1300px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
@@ -1141,156 +1152,156 @@ function Homepage() {
 			</div>
 			<div className="bg-[#d7e9f7] py-[70px]">
 				<div className="w-[100%] tracking-[1px]">
-			        <div className="max-w-[1400px] w-[100%] mx-auto px-[20px] md:px-[50px]">
-			          <div id="testimonialContainerFixed" className="overflow-hidden">
-			            <div className="text-[32px] text-center font-semibold text-[#082d60]">What Our Customers Say</div>
-			            <div id="testimonialContainerParent" className="flex w-[800%]" style={{
-			              transition: 'transform 0.5s ease-in-out'
-			            }}>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-								<div className="">
-									I visited Wert Consultancy for tax filing, and I was impressed with how quickly Naveen and Satish handled everything. Their promptness and attention to detail were outstanding, making the process smooth and efficient.
-								</div>
-								<div className="flex items-center">
-									<img className="w-[60px] h-[60px]" src={ramaChandran} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">Rama Chandran</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+					<div className="max-w-[1400px] w-[100%] mx-auto px-[20px] md:px-[50px]">
+						<div id="testimonialContainerFixed" className="overflow-hidden">
+							<div className="text-[32px] text-center font-semibold text-[#082d60]">What Our Customers Say</div>
+							<div id="testimonialContainerParent" className="flex w-[800%]" style={{
+								transition: 'transform 0.5s ease-in-out'
+							}}>
+								<div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										I visited Wert Consultancy for tax filing, and I was impressed with how quickly Naveen and Satish handled everything. Their promptness and attention to detail were outstanding, making the process smooth and efficient.
+									</div>
+									<div className="flex items-center">
+										<img className="w-[60px] h-[60px]" src={ramaChandran} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">Rama Chandran</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#FFDF73] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-								<div className="">
-									Wert Consultancy ensures timely tax returns and compliance with GST regulations. Their thorough advice and consistent support have allowed us to manage our business seamlessly, without worrying about tax obligations.
-								</div>
-								<div className="flex">
-									<img src={ssTech} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">SS Tech</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+								<div className="flex flex-col justify-between gap-[50px] bg-[#FFDF73] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										Wert Consultancy ensures timely tax returns and compliance with GST regulations. Their thorough advice and consistent support have allowed us to manage our business seamlessly, without worrying about tax obligations.
+									</div>
+									<div className="flex">
+										<img src={ssTech} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">SS Tech</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#E0FF88] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-			                	<div className="">
-			                		I’ve worked with Wert Consultancy on both direct and indirect taxation, and their professionalism and dedication were evident throughout our collaboration. Their expertise has been invaluable.
-			                	</div>
-								<div className="flex">
-									<img src={naveenKiran} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">Naveen Kiran</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+								<div className="flex flex-col justify-between gap-[50px] bg-[#E0FF88] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										I’ve worked with Wert Consultancy on both direct and indirect taxation, and their professionalism and dedication were evident throughout our collaboration. Their expertise has been invaluable.
+									</div>
+									<div className="flex">
+										<img src={naveenKiran} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">Naveen Kiran</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-			                	<div className="">
-			                		Highly professional service! They helped me understand complex tax issues and provided clear, practical solutions. Their transparency and expertise make them highly recommended for anyone needing tax assistance.
-			                	</div>
-								<div className="flex">
-									<img src={aravindhRV} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">Aravinth Rv</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+								<div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										Highly professional service! They helped me understand complex tax issues and provided clear, practical solutions. Their transparency and expertise make them highly recommended for anyone needing tax assistance.
+									</div>
+									<div className="flex">
+										<img src={aravindhRV} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">Aravinth Rv</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#67ac5c] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-			                	<div className="">
-			                		Wert Consultancy is a highly recommended firm for addressing financial queries. They ensure timely services and provide excellent guidance on all financial matters.
-			                	</div>
-								<div className="flex">
-									<img src={nithyaRagunathasamy} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">Nithya Ragunathasamy</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+								<div className="flex flex-col justify-between gap-[50px] bg-[#67ac5c] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										Wert Consultancy is a highly recommended firm for addressing financial queries. They ensure timely services and provide excellent guidance on all financial matters.
+									</div>
+									<div className="flex">
+										<img src={nithyaRagunathasamy} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">Nithya Ragunathasamy</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			                <div className="flex flex-col justify-between gap-[50px] bg-[#ffcb8a] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
-			                	<div className="">
-			                		Wert Consultancy handled my F.Y. 2023-2024 tax return with exceptional service. Their professionalism and quick communication made the process smooth. Highly recommend for tax matters
-			                	</div>
-								<div className="flex">
-									<img src={dhiveshPM} />
-									<div className="ml-[15px]">
-										<span className="text-[24px] font-semibold">Dhivesh Pm</span>
-										<div className="flex gap-[2px]">
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
-											<img src={star} />
+								<div className="flex flex-col justify-between gap-[50px] bg-[#ffcb8a] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
+									<div className="">
+										Wert Consultancy handled my F.Y. 2023-2024 tax return with exceptional service. Their professionalism and quick communication made the process smooth. Highly recommend for tax matters
+									</div>
+									<div className="flex">
+										<img src={dhiveshPM} />
+										<div className="ml-[15px]">
+											<span className="text-[24px] font-semibold">Dhivesh Pm</span>
+											<div className="flex gap-[2px]">
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+												<img src={star} />
+											</div>
 										</div>
 									</div>
 								</div>
-			                </div>
-			            </div>
-			          </div>
-			          <div className="mt-[50px] flex items-center justify-center">
-			            <div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("left")}>
-			              <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <path d="M6 9L1 5L6 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-			              </svg>
-			            </div>
-			            <div className="flex mx-[30px] gap-[10px]">
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#ffc94d"/>
-			              </svg>
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
-			              </svg>
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
-			              </svg>
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
-			              </svg>
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
-			              </svg>
-			              <svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <circle cx="5" cy="5" r="5" fill="#082d60"/>
-			              </svg>
-			            </div>
-			            <div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("right")}>
-			              <svg className="mt-[2px] ml-[3px]" width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-			                <path d="M1 9L6 5L1 1" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-			              </svg>
-			            </div>
-			          </div>
-			        </div>
-			    </div>
+							</div>
+						</div>
+						<div className="mt-[50px] flex items-center justify-center">
+							<div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("left")}>
+								<svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6 9L1 5L6 1" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+							</div>
+							<div className="flex mx-[30px] gap-[10px]">
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#ffc94d" />
+								</svg>
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#082d60" />
+								</svg>
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#082d60" />
+								</svg>
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#082d60" />
+								</svg>
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#082d60" />
+								</svg>
+								<svg className="testimonialIndex" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="5" cy="5" r="5" fill="#082d60" />
+								</svg>
+							</div>
+							<div className="scrollArrow bg-[#082d60] p-[15px] rounded-[50%] w-fit cursor-pointer" onClick={() => scrollTestimonial("right")}>
+								<svg className="mt-[2px] ml-[3px]" width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M1 9L6 5L1 1" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div id="pricing" className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] mt-[100px]">
 				<div className="text-center text-[32px] text-center font-semibold text-[#082d60]">
@@ -1301,7 +1312,7 @@ function Homepage() {
 					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("itr")}>Income Tax</span>
 					<span id="gst" className="cursor-pointer rounded-[50px] px-[20px] py-[10px]" onClick={() => togglePlanType("gst")}>GST</span>
 				</div>
-				{(planType === 'gst') && 
+				{(planType === 'gst') &&
 					<>
 						<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto mt-[30px] rounded-[50px] text-[14px] flex items-center font-semibold">
 							<span id="monthly" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanDuration("monthly")}>Monthly</span>
@@ -1314,8 +1325,8 @@ function Homepage() {
 					</>
 				}
 				<div className={`w-fit mx-auto grid gap-[30px] min-[700px]:grid-cols-2 grid-cols-1 mt-[50px] ${(planType === 'tds') ? '' : 'xl:grid-cols-3'}`}>
-					{currentPlans.map((currentPlan, i) => 
-						<PlanCard openCardModal={openCardModal} plan={currentPlan} planDuration={planDuration} />
+					{currentPlans.map((currentPlan, i) =>
+						<PlanCard openCardModal={openCardModal} plan={currentPlan} planDuration={planDuration} key={uuidv4()} />
 					)}
 				</div>
 			</div>
@@ -1331,10 +1342,10 @@ function Homepage() {
 						<div className="flex flex-col gap-[20px]">
 							<div className="flex items-start gap-[10px]">
 								<svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" width="25px" height="25px" viewBox="0 0 24 24" stroke="#ffffff">
-									<g id="SVGRepo_bgCarrier" stroke-width="0"/>
-									<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/>
+									<g id="SVGRepo_bgCarrier" strokeWidth="0" />
+									<g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" />
 									<g id="SVGRepo_iconCarrier">
-									<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+										<path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
 									</g>
 								</svg>
 								<div className="text-[18px]">
@@ -1346,13 +1357,13 @@ function Homepage() {
 							<a href="tel:+916381637626">
 								<div className="flex items-center gap-[10px]">
 									<svg width="25" height="25" viewBox="0 0 23 23" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-					                    <path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="#082d60" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-					                </svg>
-					                <div className="text-[18px]">+91 638-163-7626</div>
-					            </div>
-				            </a>
-				            <a href="mailto:+916381637626">
-					            <div className="flex items-center gap-[10px]">
+										<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="#082d60" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+									<div className="text-[18px]">+91 638-163-7626</div>
+								</div>
+							</a>
+							<a href="mailto:wertconsultancy@gmail.com">
+								<div className="flex items-center gap-[10px]">
 									<svg fill="#ffffff" width="22px" height="22px" viewBox="0 0 528.633 528.632">
 										<g>
 											<g>
@@ -1363,23 +1374,23 @@ function Homepage() {
 											</g>
 										</g>
 									</svg>
-					                <div className="text-[18px]">wertconsultancy@gmail.com</div>
-					            </div>
-					        </a>
+									<div className="text-[18px]">wertconsultancy@gmail.com</div>
+								</div>
+							</a>
 						</div>
 						<div className="flex flex-col gap-[20px] sm:w-[400px] w-full bg-[#fefefe] px-[30px] py-[50px] rounded-[20px] text-black">
 							<div onClick={() => onInputClicked("footerCompany", "errorFooterCompany")}>
-			            		<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
-			            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
-			            				<path d="M8 2L8 6L4 6L4 48L15 48L15 39L19 39L19 48L30 48L30 6L26 6L26 2 Z M 10 10L12 10L12 12L10 12 Z M 14 10L16 10L16 12L14 12 Z M 18 10L20 10L20 12L18 12 Z M 22 10L24 10L24 12L22 12 Z M 32 14L32 18L34 18L34 20L32 20L32 22L34 22L34 24L32 24L32 26L34 26L34 28L32 28L32 30L34 30L34 32L32 32L32 34L34 34L34 36L32 36L32 38L34 38L34 40L32 40L32 42L34 42L34 44L32 44L32 48L46 48L46 14 Z M 10 15L12 15L12 19L10 19 Z M 14 15L16 15L16 19L14 19 Z M 18 15L20 15L20 19L18 19 Z M 22 15L24 15L24 19L22 19 Z M 36 18L38 18L38 20L36 20 Z M 40 18L42 18L42 20L40 20 Z M 10 21L12 21L12 25L10 25 Z M 14 21L16 21L16 25L14 25 Z M 18 21L20 21L20 25L18 25 Z M 22 21L24 21L24 25L22 25 Z M 36 22L38 22L38 24L36 24 Z M 40 22L42 22L42 24L40 24 Z M 36 26L38 26L38 28L36 28 Z M 40 26L42 26L42 28L40 28 Z M 10 27L12 27L12 31L10 31 Z M 14 27L16 27L16 31L14 31 Z M 18 27L20 27L20 31L18 31 Z M 22 27L24 27L24 31L22 31 Z M 36 30L38 30L38 32L36 32 Z M 40 30L42 30L42 32L40 32 Z M 10 33L12 33L12 37L10 37 Z M 14 33L16 33L16 37L14 37 Z M 18 33L20 33L20 37L18 37 Z M 22 33L24 33L24 37L22 37 Z M 36 34L38 34L38 36L36 36 Z M 40 34L42 34L42 36L40 36 Z M 36 38L38 38L38 40L36 40 Z M 40 38L42 38L42 40L40 40 Z M 10 39L12 39L12 44L10 44 Z M 22 39L24 39L24 44L22 44 Z M 36 42L38 42L38 44L36 44 Z M 40 42L42 42L42 44L40 44Z"/>
-			            			</svg>
-			            			<input id="footerCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterCompany">Company name cannot be empty</div>
-		            		</div>
-		            		<div onClick={() => onInputClicked("footerEmail", "errorFooterEmail")}>
-			            		<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
-			            			<svg fill="#000000" width="30px" height="30px" viewBox="0 0 528.633 528.632">
+								<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
+									<svg fill="#000000" width="30px" height="30px" viewBox="0 0 50 50">
+										<path d="M8 2L8 6L4 6L4 48L15 48L15 39L19 39L19 48L30 48L30 6L26 6L26 2 Z M 10 10L12 10L12 12L10 12 Z M 14 10L16 10L16 12L14 12 Z M 18 10L20 10L20 12L18 12 Z M 22 10L24 10L24 12L22 12 Z M 32 14L32 18L34 18L34 20L32 20L32 22L34 22L34 24L32 24L32 26L34 26L34 28L32 28L32 30L34 30L34 32L32 32L32 34L34 34L34 36L32 36L32 38L34 38L34 40L32 40L32 42L34 42L34 44L32 44L32 48L46 48L46 14 Z M 10 15L12 15L12 19L10 19 Z M 14 15L16 15L16 19L14 19 Z M 18 15L20 15L20 19L18 19 Z M 22 15L24 15L24 19L22 19 Z M 36 18L38 18L38 20L36 20 Z M 40 18L42 18L42 20L40 20 Z M 10 21L12 21L12 25L10 25 Z M 14 21L16 21L16 25L14 25 Z M 18 21L20 21L20 25L18 25 Z M 22 21L24 21L24 25L22 25 Z M 36 22L38 22L38 24L36 24 Z M 40 22L42 22L42 24L40 24 Z M 36 26L38 26L38 28L36 28 Z M 40 26L42 26L42 28L40 28 Z M 10 27L12 27L12 31L10 31 Z M 14 27L16 27L16 31L14 31 Z M 18 27L20 27L20 31L18 31 Z M 22 27L24 27L24 31L22 31 Z M 36 30L38 30L38 32L36 32 Z M 40 30L42 30L42 32L40 32 Z M 10 33L12 33L12 37L10 37 Z M 14 33L16 33L16 37L14 37 Z M 18 33L20 33L20 37L18 37 Z M 22 33L24 33L24 37L22 37 Z M 36 34L38 34L38 36L36 36 Z M 40 34L42 34L42 36L40 36 Z M 36 38L38 38L38 40L36 40 Z M 40 38L42 38L42 40L40 40 Z M 10 39L12 39L12 44L10 44 Z M 22 39L24 39L24 44L22 44 Z M 36 42L38 42L38 44L36 44 Z M 40 42L42 42L42 44L40 44Z" />
+									</svg>
+									<input id="footerCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterCompany">Company name cannot be empty</div>
+							</div>
+							<div onClick={() => onInputClicked("footerEmail", "errorFooterEmail")}>
+								<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
+									<svg fill="#000000" width="30px" height="30px" viewBox="0 0 528.633 528.632">
 										<g>
 											<g>
 												<path d="M264.317,326.235c-13.739,0-26.659-5.349-36.371-15.067L0.692,83.914v356.863c0,16.897,13.703,30.601,30.6,30.601h466.044
@@ -1389,21 +1400,21 @@ function Homepage() {
 											</g>
 										</g>
 									</svg>
-			            			<input id="footerEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterEmail">Please enter valid email address</div>
-		            		</div>
-		            		<div onClick={() => onInputClicked("errorFooterMobile", "errorFooterMobile")}>
-			            		<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
-			            			<svg width="30" height="30" viewBox="0 0 23 23" fill="" xmlns="http://www.w3.org/2000/svg">
-			            				<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
-			            			</svg>
-			            			<input id="footerMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
-			            		</div>
-			            		<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterMobile">Please provide valid phone number</div>
-		            		</div>
-		            		<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('footerCompany', 'footerEmail', 'footerMobile', 'errorFooterCompany', 'errorFooterEmail', 'errorFooterMobile')}>SUBMIT</div>
-		            	</div>
+									<input id="footerEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterEmail">Please enter valid email address</div>
+							</div>
+							<div onClick={() => onInputClicked("errorFooterMobile", "errorFooterMobile")}>
+								<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
+									<svg width="30" height="30" viewBox="0 0 23 23" fill="" xmlns="http://www.w3.org/2000/svg">
+										<path d="M21.1778 16.42V19.42C21.1789 19.6985 21.1219 19.9742 21.0103 20.2293C20.8987 20.4845 20.7351 20.7136 20.5299 20.9019C20.3246 21.0901 20.0824 21.2335 19.8185 21.3227C19.5547 21.4119 19.2752 21.4451 18.9978 21.42C15.9206 21.0856 12.9648 20.0341 10.3678 18.35C7.95162 16.8147 5.90313 14.7662 4.36779 12.35C2.67777 9.7412 1.62603 6.77099 1.29779 3.68C1.2728 3.40347 1.30566 3.12476 1.39429 2.86162C1.48292 2.59849 1.62536 2.35669 1.81256 2.15162C1.99975 1.94655 2.22759 1.78271 2.48158 1.67052C2.73557 1.55833 3.01013 1.50026 3.28779 1.5H6.28779C6.7731 1.49522 7.24358 1.66708 7.61155 1.98353C7.97952 2.29999 8.21987 2.73945 8.28779 3.22C8.41441 4.18007 8.64924 5.12273 8.98779 6.03C9.12233 6.38792 9.15145 6.77691 9.0717 7.15088C8.99194 7.52485 8.80665 7.86811 8.53779 8.14L7.26779 9.41C8.69135 11.9135 10.7642 13.9864 13.2678 15.41L14.5378 14.14C14.8097 13.8711 15.1529 13.6858 15.5269 13.6061C15.9009 13.5263 16.2899 13.5555 16.6478 13.69C17.5551 14.0286 18.4977 14.2634 19.4578 14.39C19.9436 14.4585 20.3872 14.7032 20.7043 15.0775C21.0215 15.4518 21.19 15.9296 21.1778 16.42Z" stroke="" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+									<input id="footerMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
+								</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterMobile">Please provide valid phone number</div>
+							</div>
+							<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('footerCompany', 'footerEmail', 'footerMobile', 'errorFooterCompany', 'errorFooterEmail', 'errorFooterMobile')}>SUBMIT</div>
+						</div>
 					</div>
 				</div>
 			</div>
