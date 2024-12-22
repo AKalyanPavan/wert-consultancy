@@ -85,7 +85,7 @@ function Homepage() {
 		},
 		{
 			type: 'gst',
-			title: 'GST Filing Service for Providers & Professionals',
+			title: 'Gst filing FOR SERVICE PROVIDERS AND PROFESSIONALS',
 			price: '₹747',
 			yearlyPrice: '₹7,470',
 			priceDuration: '/ month',
@@ -117,7 +117,7 @@ function Homepage() {
 		},
 		{
 			type: 'gst',
-			title: 'GST Filing E-Commerce',
+			title: 'GST Filing for E-Commerce',
 			price: '₹997',
 			yearlyPrice: '₹9,970',
 			priceDuration: '/ month',
@@ -509,7 +509,7 @@ function Homepage() {
 	const [activeTestimonial, setActiveTestimonial] = useState(0);
 	const [translateX, setTranslateX] = useState(0);
 	const [scrollDirection, setScrollDirection] = useState('right');
-	const [planType, setPlanType] = useState('tds');
+	const [planType, setPlanType] = useState('gst');
 	const [currentPlans, setCurrentPlans] = useState(toggleCurrentPlans(planType));
 	const [planDuration, setPlanDuration] = useState('yearly');
 	const [modalDisplay, setModalDisplay] = useState('hidden');
@@ -1308,9 +1308,9 @@ function Homepage() {
 					Plans based on your selection
 				</div>
 				<div className="bg-[#f5f5f5] w-fit px-[10px] py-[5px] mx-auto mt-[50px] rounded-[50px] text-[14px] flex items-center font-semibold">
-					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer bg-[#082d60] text-white" onClick={() => togglePlanType("tds")}>TDS</span>
+					<span id="gst" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer  bg-[#082d60] text-white" onClick={() => togglePlanType("gst")}>GST</span>
 					<span id="itr" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("itr")}>Income Tax</span>
-					<span id="gst" className="cursor-pointer rounded-[50px] px-[20px] py-[10px]" onClick={() => togglePlanType("gst")}>GST</span>
+					<span id="tds" className="px-[20px] py-[10px] rounded-[50px] cursor-pointer" onClick={() => togglePlanType("tds")}>TDS</span>
 				</div>
 				{(planType === 'gst') &&
 					<>
