@@ -840,9 +840,9 @@ function Homepage() {
 						overflowY: "auto",
 					}}
 					id="modal"
-					className={"w-[80%] min-[500px]:w-[400px] bg-[#d7e9f7] fixed top-[50%] left-[50%] rounded-[20px] " + modalDisplay}>
+					className={"w-[90%] min-[550px]:w-[500px] bg-[#d7e9f7] fixed top-[50%] left-[50%] rounded-[20px] " + modalDisplay}>
 
-					<div className="max-w-[400px]">
+					<div className="max-w-[500px]">
 						<PlanModal plan={modalPlan} planDuration={planDuration} onModalOverlayClicked={onModalOverlayClicked} key={uuidv4()} />
 					</div>
 
