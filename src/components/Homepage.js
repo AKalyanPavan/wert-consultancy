@@ -12,6 +12,17 @@ import nithyaRagunathasamy from './../images/nithya-ragunathasamy.svg';
 import dhiveshPM from './../images/dhivesh-pm.svg';
 import star from './../images/star.svg';
 
+import ZohoBooks from './../images/brands/zoho-books.svg';
+import Odoo from './../images/brands/odoo.png';
+import TallyPrime from './../images/brands/tally-prime.png';
+import IntuitQuickbooks from './../images/brands/intuit-quickbooks.png';
+import Xero from './../images/brands/xero.png';
+import Myob from './../images/brands/myob.png';
+import Razorpay from './../images/brands/razorpay.png';
+import IciciEazypay from './../images/brands/icici-eazypay.png';
+import Winman from './../images/brands/winman.png';
+import ClearTax from './../images/brands/cleartax.png';
+
 import PlanCard from './PlanCard.js';
 import PlanModal from './PlanModal.js';
 
@@ -724,17 +735,17 @@ function Homepage() {
 		let isError = false;
 
 		if (!companyInput.value.trim()) {
-			errorCompany.classList.remove("hidden");
+			errorCompany.classList.remove("invisible");
 			isError = true;
 		}
 
 		if (!emailRegex.test(emailInput.value)) {
-			errorEmail.classList.remove("hidden");
+			errorEmail.classList.remove("invisible");
 			isError = true;
 		}
 
 		if (!phoneRegex.test(mobileInput.value)) {
-			errorMobile.classList.remove("hidden");
+			errorMobile.classList.remove("invisible");
 			isError = true;
 		}
 
@@ -782,8 +793,8 @@ function Homepage() {
 		let inputElement = document.getElementById(input);
 		let errorElement = document.getElementById(error);
 
-		if (!errorElement.classList.contains("hidden")) {
-			errorElement.classList.add("hidden");
+		if (!errorElement.classList.contains("invisible")) {
+			errorElement.classList.add("invisible");
 		}
 
 		inputElement.focus();
@@ -893,7 +904,7 @@ function Homepage() {
 				</div>
 			</div>
 			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[115px] pb-[115px] flex justify-between max-xl:flex-col gap-[50px]">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[115px] pb-[100px] flex justify-between max-xl:flex-col gap-[50px]">
 					<div className="max-w-[700px] pb-[25px]">
 						<div className="font-bold sm:text-[54px] text-[28px]">
 							Comprehensive Accounting Platform for growing businesses
@@ -926,7 +937,7 @@ function Homepage() {
 							</div>
 						</div>
 					</div>
-					<div className="max-w-[520px] max-md:mx-auto bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
+					<div className="max-w-[520px] max-md:mx-auto bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px] h-fit">
 						<div className="text-[25px] text-white font-medium mb-[30px]">Get Your First Consultation at Wert Consultancy—Completely Free!</div>
 						<div className="flex flex-col gap-[20px]">
 							<div onClick={() => onInputClicked("firstSectionCompany", "errorFirstSectionCompany")}>
@@ -936,7 +947,7 @@ function Homepage() {
 									</svg>
 									<input id="firstSectionCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionCompany">Company name cannot be empty</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFirstSectionCompany">Company name cannot be empty</div>
 							</div>
 							<div onClick={() => onInputClicked("firstSectionEmail", "errorFirstSectionEmail")}>
 								<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
@@ -952,7 +963,7 @@ function Homepage() {
 									</svg>
 									<input id="firstSectionEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionEmail">Please enter valid email address</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFirstSectionEmail">Please enter valid email address</div>
 							</div>
 							<div onClick={() => onInputClicked("firstSectionMobile", "errorFirstSectionMobile")}>
 								<div className="flex items-center border-[1.5px] border-solid border-white p-[10px] rounded-[5px] bg-white">
@@ -961,10 +972,25 @@ function Homepage() {
 									</svg>
 									<input id="firstSectionMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFirstSectionMobile">Please provide valid phone number</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFirstSectionMobile">Please provide valid phone number</div>
 							</div>
 							<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('firstSectionCompany', 'firstSectionEmail', 'firstSectionMobile', 'errorFirstSectionCompany', 'errorFirstSectionEmail', 'errorFirstSectionMobile')}>SUBMIT</div>
 						</div>
+					</div>
+				</div>
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
+					<div className="text-[32px] text-center font-semibold">Software Proficiency</div>
+					<div className="flex flex-wrap justify-center sm:gap-[50px] gap-[20px] items-center mt-[50px]">
+						<img className="h-[50px]" src={ZohoBooks} />
+						<img className="h-[50px]" src={Odoo} />
+						<img className="h-[50px]" src={IntuitQuickbooks} />
+						<img className="h-[50px]" src={Xero} />
+						<img className="h-[70px]" src={TallyPrime} />
+						<img className="h-[50px]" src={Myob} />
+						<img className="h-[50px]" src={Razorpay} />
+						<img className="h-[50px]" src={IciciEazypay} />
+						<img className="h-[50px]" src={Winman} />
+						<img className="h-[50px]" src={ClearTax} />
 					</div>
 				</div>
 			</div>
@@ -1387,7 +1413,7 @@ function Homepage() {
 									</svg>
 									<input id="footerCompany" className="outline-none w-full ml-[10px]" type="text" placeholder="Company Name" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterCompany">Company name cannot be empty</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFooterCompany">Company name cannot be empty</div>
 							</div>
 							<div onClick={() => onInputClicked("footerEmail", "errorFooterEmail")}>
 								<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
@@ -1403,7 +1429,7 @@ function Homepage() {
 									</svg>
 									<input id="footerEmail" className="outline-none w-full ml-[10px]" type="text" placeholder="Email Address" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterEmail">Please enter valid email address</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFooterEmail">Please enter valid email address</div>
 							</div>
 							<div onClick={() => onInputClicked("errorFooterMobile", "errorFooterMobile")}>
 								<div className="flex items-center border-[1px] border-solid border-black p-[10px] rounded-[5px] bg-white">
@@ -1412,7 +1438,7 @@ function Homepage() {
 									</svg>
 									<input id="footerMobile" className="outline-none w-full ml-[10px]" type="text" placeholder="Mobile Number" />
 								</div>
-								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] hidden" id="errorFooterMobile">Please provide valid phone number</div>
+								<div className="text-right mt-[5px] text-[14px] text-[#ff3939] invisible" id="errorFooterMobile">Please provide valid phone number</div>
 							</div>
 							<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('footerCompany', 'footerEmail', 'footerMobile', 'errorFooterCompany', 'errorFooterEmail', 'errorFooterMobile')}>SUBMIT</div>
 						</div>
