@@ -893,12 +893,10 @@ function Homepage() {
 				</div>
 			</div>
 			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[115px] pb-[115px] flex flex-wrap">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[115px] pb-[115px] flex justify-between max-xl:flex-col gap-[50px]">
 					<div className="max-w-[700px] pb-[25px]">
-						<div className="font-bold sm:text-[54px] text-[32px]" style={{ lineHeight: 1.5 }} >
-							<div className="">Comprehensive</div>
-							<div className="">Accounting Platform for</div>
-							<div className='text-[70px]'>growing businesses</div>
+						<div className="font-bold sm:text-[54px] text-[28px]">
+							Comprehensive Accounting Platform for growing businesses
 						</div>
 						<div className="pt-[30px] text-[18px] text-black" >Wert Consultancy simplifies tax filing for individuals and businesses with expert guidance and personalized solutions. Our secure and seamless platform ensures accuracy, compliance, and maximum refunds every time. Trust us to make your tax journey hassle-free and stress-free.</div>
 						<div className="flex flex-col gap-[10px] mt-[30px] text-black">
@@ -928,7 +926,7 @@ function Homepage() {
 							</div>
 						</div>
 					</div>
-					<div className="max-w-[520px] max-md:mx-auto md:ml-auto bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px] h-full	">
+					<div className="max-w-[520px] max-md:mx-auto bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px]">
 						<div className="text-[25px] text-white font-medium mb-[30px]">Get Your First Consultation at Wert Consultancy—Completely Free!</div>
 						<div className="flex flex-col gap-[20px]">
 							<div onClick={() => onInputClicked("firstSectionCompany", "errorFirstSectionCompany")}>
