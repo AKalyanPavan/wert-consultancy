@@ -1,7 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.12235c10.css",
-    "main.js": "/static/js/main.6e13e63f.js",
+    "main.css": "/static/css/main.b83e6239.css",
+    "main.js": "/static/js/main.f17bf950.js",
+    "static/media/odoo.png": "/static/media/odoo.59313607ca76010e0781.png",
+    "static/media/myob.png": "/static/media/myob.4cb841efe22003d96dd7.png",
+    "static/media/cleartax.png": "/static/media/cleartax.c06fe058d2527ab935d0.png",
+    "static/media/intuit-quickbooks.png": "/static/media/intuit-quickbooks.32b16781ee03f352c2bf.png",
+    "static/media/xero.png": "/static/media/xero.b394c42eebcfaf429d92.png",
+    "static/media/tally-prime.png": "/static/media/tally-prime.57869530472cde1ecfb6.png",
+    "static/media/zoho-books.svg": "/static/media/zoho-books.9740e02595327d007f9f1f6ef5eb2f85.svg",
+    "static/media/icici-eazypay.png": "/static/media/icici-eazypay.cc5c0a11a276b673c141.png",
+    "static/media/razorpay.png": "/static/media/razorpay.a13b9fa084cb80ded9c8.png",
     "static/media/freelancers.png": "/static/media/freelancers.fae6ac9222546d2f76d0.png",
     "static/media/sme-business.png": "/static/media/sme-business.875be9d501d58c76e720.png",
     "static/media/logo.svg": "/static/media/logo.2416b61a09349482f20ec62a671efc71.svg",
@@ -12,11 +21,11 @@
     "static/media/nithya-ragunathasamy.svg": "/static/media/nithya-ragunathasamy.f6755f36988625d75cfe215b9e7e7b54.svg",
     "index.html": "/index.html",
     "static/media/registration-icon.svg": "/static/media/registration-icon.e7d8677d23448a9532d3a48844ba55c7.svg",
-    "main.12235c10.css.map": "/static/css/main.12235c10.css.map",
-    "main.6e13e63f.js.map": "/static/js/main.6e13e63f.js.map"
+    "main.b83e6239.css.map": "/static/css/main.b83e6239.css.map",
+    "main.f17bf950.js.map": "/static/js/main.f17bf950.js.map"
   },
   "entrypoints": [
-    "static/css/main.12235c10.css",
-    "static/js/main.6e13e63f.js"
+    "static/css/main.b83e6239.css",
+    "static/js/main.f17bf950.js"
   ]
 }
