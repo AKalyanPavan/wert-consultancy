@@ -996,69 +996,99 @@ function Homepage() {
 			</div>
 			<div className="max-w-[1300px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
 				<div className="text-[32px] text-center font-semibold text-[#082d60] py-[70px]">POPULAR SERVICES</div>
-				<div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px]">
+				<div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px] text-center">
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Income Tax Notice Assistance
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Start-up Registration & Compliance
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							A dedicated tax expert helps you navigate and respond to notices under sections 139(9), 143(1), high-value transactions, and other notices from the Income Tax Department.
+							<div>All-in-one Incorporation & compliance for:</div>
+							<br />
+							<div>Private limited Company, Partnership, LLP Sole-Propreitor and OPC.</div>
+							<br />
+							<div>Startup India registration and DPIT recognition & Trademark registration.</div>
+							<br />
+							<div>Director Identification number (DIN), Digital signature (DSC), DIR-3 KYC and Annual return forms filing with ROC/MCA.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Expert Assisted ITR Filing
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							GST Filing & Refunds
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Experts to do Income Tax Filing for you. It is convenient & fast, with maximum eligible refund calculated for you.
+							<div>Gst Monthly / Quarterly / Annual Returns filing and Refunds for regular business, E-commerce sellers, composition dealers, SEZ and Import-Export business and service providers.</div>
+							<br />
+							<div>GSTR-1, GSTR-3B, GSTR-4, CMP-08 TDS filing, and GSTR 1/2A/2B/3B Reconciliation and matching with accounts and Notice response support.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Updated Return Filing (ITR-U)
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							ITR Filing & Notice Assistance
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							ITR-U helps individuals to update the correct income in the already filed ITR and also provides an opportunity for those who have not filed previously.
+							<div>ITR-1, ITR-2, ITR-3, ITR-4, ITR-5, ITR-6, ITR-7 filings & Updated Return Filing (ITR-U) Filings and Maximum eligible Refund.</div>
+							<br />
+							<div>Advance tax Planning, TDS and expert guidance to navigate and respond to Income tax notices and Appeals.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Foreign Income Tax Filing
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							NRI/Foreign Income Tax Filing
 						</div>
-						<div className="text-[#6b6b6b] mt-[10px]">
-							Ease your Indian tax filing with our experts, covering both foreign income like RSU / ESOP / ESSP. We ensure compliance with the Income tax laws and help you declare foreign income and claim eligible tax deductions.
-						</div>
-					</div>
-					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							E-commerce, SEZ & Export Refunds
-						</div>
-						<div className="text-[#6b6b6b] mt-[10px]">
-							Our expert handles all GST and Income tax compliance for sellers in E commerce and Business in SEZ and help claim benefits under SEZ.We will help you get your GST refund of ITC on export of goods and services under LUT/Bond and Accumulated unutilized ITC.
+						<div className="text-[#6b6b6b] mt-[10px] min-h-[60px]">
+							<div>We assist Indian NRIs and foreign nationals Help Declare Foreign Income like RSU / ESOP / ESSP, Foreign Assets and Bank Accounts.</div>
+							<br />
+							<div>Claim eligible tax deductions for foreign salary through DTAA Tax Relief.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Capital Gain Tax Filing
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Capital Gains, Futures and Options Tax Filing
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Seeking tax expert advice on the transaction done with respect to the sale of property, equity shares, mutual fund units, or bonds in addition to salary/business income.
+							<div>Tax reporting for sale of property, equity shares, mutual funds, futures and options profits/Loss carryforward and set off, Crypto transactions.</div>
+							<br />
+							<div>Tax Savings on capital gain and Tax loss harvesting plan.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							Domestic and International Bookkeeping
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Bookkeeping & Accounting Solutions
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Our team keeps your transactions in order and provides monthly financial reports. Access an up-to-date summary of your earnings and spending anytime, without waiting for final reports.We are expert in Tally,Quickbooks, Zoho books, MYOB and Xero. we can handle US, UK, Netherlands, Australia and UAE bookkeeping.
+							<div>Accounting Setup in Zoho Books, Tally prime, Odoo, and other cloud accounting and ERP software.</div>
+							<br />
+							<div>Recording of purchases, sales, receipts, payments, Expenses, Bank, Credit cards and loan reconciliation, Accounts payables and receivables and preparing Financial statements.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
-						<div className="font-semibold text-[20px] h-[50px]">
-							US Tax preparation
+						<div className="font-semibold text-[20px] min-h-[60px]">
+						Zoho One Implementation and Customization
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							Our team of experienced accountants specializes in individual and business tax preparation to meet your practice’s needs. We’re flexible and work with your preferred software to provide reliable, efficient, and high-quality accounting and bookkeeping services but we are already comfortable with CCH products. From preparing 1099s to preparing complex 1065,1120,1120S, 1041 and 1040 we can help prepare the tax returns with provided infrastructure.
+							<div>We specialize in Zoho One implementation, delivering tailored solutions to streamline your business operations. </div>
+							<br />
+							<div>From fresh implementations to migrations, our expert team ensures seamless integration, customization, and ongoing support to maximize the platform's potential.</div>
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] min-h-[60px]">
+						Odoo Implementation and Customization
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							<div>Our expertise extends to Odoo implementation, providing customized solutions designed to enhance your business processes.</div>
+							<br />
+							<div>Whether it's a new setup, migration, or personalized customizations, we offer comprehensive support to ensure your Odoo platform operates flawlessly.</div>
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							International Accounting & Tax preparation
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							<div>We handle small business bookkeeping for US, UK, Netherlands, Australia, and UAE using QuickBooks, Zoho Books, MYOB, and Xero to ensure smooth and accurate bookkeeping.</div>
+							<br />
+							<div>Our team of experienced accountants specializes in individual and business tax forms (1099,1065, 1120, 1120S & 1040) preparation for CPA firms in US.</div>
 						</div>
 					</div>
 				</div>
