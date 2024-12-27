@@ -18,8 +18,6 @@ import TallyPrime from './../images/brands/tally-prime.png';
 import IntuitQuickbooks from './../images/brands/intuit-quickbooks.png';
 import Xero from './../images/brands/xero.png';
 import Myob from './../images/brands/myob.png';
-import Razorpay from './../images/brands/razorpay.png';
-import IciciEazypay from './../images/brands/icici-eazypay.png';
 import Winman from './../images/brands/winman.png';
 import ClearTax from './../images/brands/cleartax.png';
 
@@ -978,17 +976,15 @@ function Homepage() {
 						</div>
 					</div>
 				</div>
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
+				<div className="max-w-[1200px] mx-auto sm:px-[50px] px-[20px] font-['Lexend']">
 					<div className="text-[32px] text-center font-semibold">Software Proficiency</div>
-					<div className="flex flex-wrap justify-center sm:gap-[50px] gap-[20px] items-center mt-[50px]">
+					<div className="flex flex-wrap justify-center sm:gap-x-[50px] gap-x-[20px] gap-y-[50px] items-center mt-[50px]">
 						<img className="h-[50px]" src={ZohoBooks} />
 						<img className="h-[50px]" src={Odoo} />
 						<img className="h-[50px]" src={IntuitQuickbooks} />
 						<img className="h-[50px]" src={Xero} />
 						<img className="h-[70px]" src={TallyPrime} />
 						<img className="h-[50px]" src={Myob} />
-						<img className="h-[50px]" src={Razorpay} />
-						<img className="h-[50px]" src={IciciEazypay} />
 						<img className="h-[50px]" src={Winman} />
 						<img className="h-[50px]" src={ClearTax} />
 					</div>
