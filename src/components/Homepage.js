@@ -1077,6 +1077,8 @@ function Homepage() {
 							<div><span className='text-black'>Zoho CRM:</span> Manage leads, customers, and sales pipelines efficiently.</div>
 							<br />
 							<div><span className='text-black'>Zoho Creator:</span> Build and deploy custom applications tailored to your needs.</div>
+							<br />
+							<div><span className='text-black'>Zoho Forms:</span> Simplify data collection with dynamic forms.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
@@ -1086,9 +1088,7 @@ function Homepage() {
 						<div className="text-[#6b6b6b] mt-[10px]">
 							<div>Boost teamwork and operations with Zoho's specialized services:</div>
 							<br />
-							<div><span className='text-black'>Zoho WorkDrive:</span> Secure cloud storage for document management.</div>
-							<br />
-							<div><span className='text-black'>Zoho Forms:</span> Simplify data collection with dynamic forms.</div>
+							<div><span className='text-black'>Zoho WorkDrive:</span> Secure cloud storage for document management and custom intergration with other Zoho products like Zoho CRM.</div>
 							<br />
 							<div><span className='text-black'>Zoho Inventory:</span> Optimize inventory tracking and order management.</div>
 						</div>
