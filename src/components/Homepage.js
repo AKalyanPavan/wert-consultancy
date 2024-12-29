@@ -1059,7 +1059,7 @@ function Homepage() {
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] min-h-[60px]">
-						Zoho One Implementation and Customization
+							Zoho One Implementation and Customization
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
 							<div>We specialize in Zoho One implementation, delivering tailored solutions to streamline your business operations. </div>
@@ -1069,7 +1069,33 @@ function Homepage() {
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] min-h-[60px]">
-						Odoo Implementation and Customization
+							Zoho Business Applications Setup
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							<div>Streamline your core processes with Zoho's powerful tools:</div>
+							<br />
+							<div><span className='text-black'>Zoho CRM:</span> Manage leads, customers, and sales pipelines efficiently.</div>
+							<br />
+							<div><span className='text-black'>Zoho Creator:</span> Build and deploy custom applications tailored to your needs.</div>
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Zoho Collaboration & Inventory Solutions
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							<div>Boost teamwork and operations with Zoho's specialized services:</div>
+							<br />
+							<div><span className='text-black'>Zoho WorkDrive:</span> Secure cloud storage for document management.</div>
+							<br />
+							<div><span className='text-black'>Zoho Forms:</span> Simplify data collection with dynamic forms.</div>
+							<br />
+							<div><span className='text-black'>Zoho Inventory:</span> Optimize inventory tracking and order management.</div>
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Odoo Implementation and Customization
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
 							<div>Our expertise extends to Odoo implementation, providing customized solutions designed to enhance your business processes.</div>
@@ -1208,7 +1234,7 @@ function Homepage() {
 					<div className="max-w-[1400px] w-[100%] mx-auto px-[20px] md:px-[50px]">
 						<div id="testimonialContainerFixed" className="overflow-hidden">
 							<div className="text-[32px] text-center font-semibold text-[#082d60]">What Our Customers Say</div>
-							<div id="testimonialContainerParent" className="flex w-[800%]" style={{
+							<div id="testimonialContainerParent" className="flex w-[800%] font-normal" style={{
 								transition: 'transform 0.5s ease-in-out'
 							}}>
 								<div className="flex flex-col justify-between gap-[50px] bg-[#8ADCFF] sm:px-[52px] sm:py-[40px] px-[30px] py-[30px] mt-[60px] rounded-[24px] min-[700px]:w-[555px] w-[300px] text-left text-[16px] mr-[20px] testimonial">
