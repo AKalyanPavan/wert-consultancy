@@ -901,38 +901,14 @@ function Homepage() {
 					</div>
 				</div>
 			</div>
-			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] sm:rounded-b-[40px] pb-[50px]">
-				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] pt-[115px] pb-[100px] flex justify-between max-xl:flex-col gap-[50px]">
+			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] pb-[50px]">
+				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] py-[115px] flex items-center justify-between max-xl:flex-col gap-[50px]">
 					<div className="max-w-[700px] pb-[25px]">
 						<div className="font-bold sm:text-[54px] text-[28px]">
-							Comprehensive Accounting Platform for growing businesses
+							The Only Team Your Growing Business Need
 						</div>
-						<div className="pt-[30px] text-[18px] text-black" >Wert Consultancy simplifies tax filing for individuals and businesses with expert guidance and personalized solutions. Our secure and seamless platform ensures accuracy, compliance, and maximum refunds every time. Trust us to make your tax journey hassle-free and stress-free.</div>
-						<div className="flex flex-col gap-[10px] mt-[30px] text-black">
-							<div className="flex items-center">
-								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-								</svg>
-								<div className="text-[18px] font-normal ml-[5px]">
-									Comprehensive GST solutions
-								</div>
-							</div>
-							<div className="flex items-center">
-								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-								</svg>
-								<div className="text-[18px] font-normal ml-[5px]">
-									Full financial compliance
-								</div>
-							</div>
-							<div className="flex items-center">
-								<svg width="20" height="16" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M8.01587 1.77777L3.65079 6.22222L1.66667 4.20201" stroke="black" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
-								</svg>
-								<div className="text-[18px] font-normal ml-[5px]">
-									Seamless tax filing
-								</div>
-							</div>
+						<div className="pt-[30px] text-[18px] text-black" >
+							Whether you're a newly incorporated business or a profitable business looking to expand, our team has the expertise to handle your needs.
 						</div>
 					</div>
 					<div className="max-w-[520px] max-md:mx-auto bg-[#082d60] md:px-[40px] px-[20px] py-[30px] rounded-[20px] h-fit">
@@ -987,6 +963,45 @@ function Homepage() {
 						<img className="h-[50px]" src={Myob} />
 						<img className="h-[50px]" src={Winman} />
 						<img className="h-[50px]" src={ClearTax} />
+					</div>
+				</div>
+			</div>
+			<div className="py-[100px] bg-[#082d60]">
+				<div className="max-w-[1100px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] text-white">
+					<div className="sm:text-[40px] text-[30px] font-semibold text-center">Why choose Wert?</div>
+					<div className="sm:text-[20px] pt-[50px] font-light">
+						<div>
+							Just like you, we're founders and entrepreneurs who know the pain points of running a small business and the shortfalls of traditional accounting.
+						</div>
+						<div className="py-[20px]">
+							In 2018, we launched Wert, a fairly priced, all-inclusive service for freelancers, contractors, and small businesses on a mission to
+						</div>
+						<ul>
+							<li>
+								<div className="flex gap-[10px]">
+									<div>• </div>
+									<div>
+										Reduce Non Compliancce costs of small business and startups.
+									</div>
+								</div>
+							</li>
+							<li className="py-[5px]">
+								<div className="flex gap-[10px]">
+									<div>• </div>
+									<div>
+										Transparent and One stop solution for Regulatory Compliances.
+									</div>
+								</div>
+							</li>
+							<li>
+								<div className="flex gap-[10px]">
+									<div>• </div>
+									<div>
+										Flexible pricing and Timely service for all your Setup, accounting and Business needs.
+									</div>
+								</div>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
