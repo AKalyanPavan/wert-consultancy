@@ -863,7 +863,7 @@ function Homepage() {
 				</div>
 			</div>
 
-			<Header />
+			<Header page={'Homepage'} />
 
 			<div className="font-['Lexend'] bg-[#d7e9f7] text-[#082d60] pb-[50px]">
 				<div className="max-w-[1400px] mx-auto sm:px-[50px] px-[20px] font-['Lexend'] py-[115px] flex items-center justify-between max-xl:flex-col gap-[50px]">
@@ -1473,6 +1473,11 @@ function Homepage() {
 							</div>
 							<div className="bg-[#ffc94d] text-[18px] font-medium text-center p-[10px] cursor-pointer rounded-[5px]" onClick={() => validateInput('footerCompany', 'footerEmail', 'footerMobile', 'errorFooterCompany', 'errorFooterEmail', 'errorFooterMobile')}>SUBMIT</div>
 						</div>
+					</div>
+					<div className="flex max-sm:flex-col gap-[10px] sm:gap-[50px] mx-auto w-fit mt-[50px] underline">
+						<a href="/privacy-policy"><div>Privacy Policy</div></a>
+						<a href="/terms-and-conditions"><div>Terms and Conditions</div></a>
+						<a href="/refund-policy"><div>Refund Policy</div></a>
 					</div>
 				</div>
 			</div>

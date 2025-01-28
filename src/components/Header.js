@@ -1,6 +1,6 @@
 import logo from './../images/logo.svg';
 
-export default function Header() {
+export default function Header({page}) {
 
 	document.addEventListener('scroll', () => {
 		let header = document.getElementById("header");
@@ -29,7 +29,7 @@ export default function Header() {
 					<img className="sm:w-[200px] w-[150px]" src={logo} />
 				</a>
 				<div className="flex items-center text-[#082d60] font-medium text-[18px]">
-					<div className="cursor-pointer mr-[20px] sm:block hidden" onClick={() => scrollPage("pricing")}>Pricing</div>
+					{page == 'Homepage' && <div className="cursor-pointer mr-[20px] sm:block hidden" onClick={() => scrollPage("pricing")}>Pricing</div>}
 					<a className="" href="tel:+916381637626">
 						<div className="w-fit border-[solid] border-[1.5px] border-[#082d60] sm:px-[20px] px-[10px] py-[5px] rounded-[10px] items-center flex cursor-pointer">
 							<div className="flex items-center border-[solid] pr-[5px] py-[5px]">
