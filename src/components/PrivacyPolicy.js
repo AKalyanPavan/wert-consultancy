@@ -15,13 +15,13 @@ export default function PrivacyPolicy() {
 					<p className="pt-[5px]">
 					    This privacy policy outlines SSBA's methodology for collecting and sharing personal data. It pertains to the information we collect and use in managing income tax policies and delivering services to our clients. These services include, but are not limited to, tax preparation, tax planning, tax scrutiny, addressing tax-related queries, and providing financial planning advisory services, all within the scope of Indian laws.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 					    To Whom This Privacy Policy Applies:
 					</div>
 					<p>
 					    This privacy policy pertains to various individuals and entities, including but not limited to the following:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>
 					        Clients: Individuals who utilize our services and share their personal information with us.
 					    </li>
@@ -44,13 +44,13 @@ export default function PrivacyPolicy() {
 					<p>
 					    For simplicity, we collectively refer to all these categories as "you." This policy covers all aspects of our website, app, and the products and services we offer, including but not limited to Income Tax Return filing, Tax Notices, Tax Scrutiny, Tax Planning Applications, and other related services.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Functionality of This Privacy Policy:
 					</div>
 					<p>
 					    This privacy policy aims to explain our privacy protocols and includes the following key aspects:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>Information We May Collect About You: Outlines the types of personal data we may gather from you.</li>
 					    <li>Why We Collect Information About You: Explains the reasons behind collecting your personal information.</li>
 					    <li>How We May Use Your Personal Information: Details how we utilize your personal data for various purposes.</li>
@@ -64,13 +64,13 @@ export default function PrivacyPolicy() {
 					    <li>Cookies Statement: Discusses the use of cookies on our website and their impact on your browsing experience.</li>
 					    <li>Miscellaneous: Includes any additional details relevant to our privacy practices.</li>
 					</ul>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Information We May Collect About You:
 					</div>
 					<p>
 					    We may collect and process the following personal information about you:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>Newsletter Subscription: Your email address when you subscribe to our newsletter.</li>
 					    <li>Provided Information: Details you voluntarily share by filling out forms or uploading data.</li>
 					    <li>Registration Details: Personal identification details such as your name, address, contact information, email address, and password, required for tax preparation services.</li>
@@ -91,13 +91,13 @@ export default function PrivacyPolicy() {
 					        Publicly Available Information: Data from public domains or accessible sources, including social media platforms.
 					    </li>
 					</ul>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Why We Collect Information About You:
 					</div>
 					<p>
 					    We may process your personal information for specific legitimate or lawful purposes, including but not limited to:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>Enhancing Network and Information Security: To strengthen the security of our network and information systems, protecting against potential threats and vulnerabilities.</li>
 					    <li>Preventing Online Fraud and Cybercrime: To detect and prevent online fraud and cybercrime, ensuring the safety and integrity of our services.</li>
 					    <li>Maintaining Accounts and Records: To keep accurate and up-to-date accounts and records for financial and operational purposes.</li>
@@ -112,13 +112,13 @@ export default function PrivacyPolicy() {
 					    <li>Performance of Contract: To process personal information for fulfilling contractual obligations or initiating contract-related steps.</li>
 					    <li>Performance of Public Interest Tasks: To process data for tasks carried out in the public interest or in the exercise of official authority, as per relevant laws and regulations.</li>
 					</ul>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						How We May Utilize Your Personal Information:
 					</div>
 					<p>
 					    We use your personal information in the following ways:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>Assessment for Tax Planning and Advisory Services: To evaluate and determine your eligibility for tax planning or advisory services.</li>
 					    <li>Management of Income Tax Filing and Advisory Services: To efficiently handle tasks related to income tax return filing and advisory services, including tax planning.</li>
 					    <li>Monitoring Calls and Transactions: To monitor calls and transactions, ensuring service quality, compliance with procedures, fraud prevention, and adherence to the Information Technology Act, 2000, and other applicable Indian laws, along with SSBA's policies.</li>
@@ -132,13 +132,13 @@ export default function PrivacyPolicy() {
 					<p>
 					    Please note that we will never process your personal data in ways that conflict with your interests or rights. Your privacy and interests are our highest priority.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Newsletters:
 					</div>
 					<p>
 					    When you subscribe to our newsletters, we collect your email address to send you these newsletters. We prioritize transparency in detailing the information we collect and its use. Our goal is to deliver improved services, enhance your financial well-being, streamline our business operations, and make our offerings more intelligent and beneficial for you. Importantly, we do not sell or share your personal information with third parties for their commercial purposes without your explicit consent under any circumstances.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Consent:
 					</div>
 					<p>
@@ -147,13 +147,13 @@ export default function PrivacyPolicy() {
 					<p>
 					    By visiting our website and interacting with its content, you are deemed to have consented to the privacy policies of SSBA Innovations Ltd.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Sharing Your Personal Information:
 					</div>
 					<p>
 					    We are committed to maintaining non-disclosure standards and adhering to all related agreements. Our priority is to ensure the safety and security of websites associated with us. However, please note that we do not have control over third-party websites. Therefore, SSBA Innovations Ltd. may access and/or share your personal information with:
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Our Affiliates:
 					</div>
 					<p>
@@ -168,25 +168,25 @@ export default function PrivacyPolicy() {
 					<p>
 					    Where permissible under applicable laws, SSBA Innovations Ltd. may share personal information with service providers performing business functions on our behalf, within or outside India. These providers may use anonymized data to tailor advertisements while adhering to strict contractual obligations to safeguard your information.
 					</p>
-					<p>
+					<p className="font-semibold text-black">
 					    Joint Marketing Arrangements:
 					</p>
 					<p>
 					    SSBA Innovations Ltd. may share information with joint marketers under formal marketing arrangements.
 					</p>
-					<p>
+					<p className="font-semibold text-black">
 					    Persons Who Acquire Our Assets or Business:
 					</p>
 					<p>
 					    If SSBA Innovations Ltd. transfers its rights or business assets, certain client information may be included in such transfers, with prior notification provided.
 					</p>
-					<p>
+					<p className="font-semibold text-black">
 					    Other Third Parties: Governmental Authorities and Legal Proceedings:
 					</p>
 					<p>
 					    Personal information may be disclosed to courts, law enforcement agencies, or regulatory bodies in connection with investigations or compliance requirements. Aggregate data that does not reveal individual identities may also be disclosed.
 					</p>
-					<p>
+					<p className="font-semibold text-black">
 					    Transmission, Storage, and Security of Your Personal Information:
 					</p>
 					<p>
@@ -195,19 +195,19 @@ export default function PrivacyPolicy() {
 					<p>
 					    If you have a password to access specific parts of our website, you must maintain its confidentiality and follow the security guidelines provided by us.
 					</p>
-					<p>
+					<p className="font-semibold text-black">
 					    Retention of Your Personal Information:
 					</p>
 					<p>
 					    Personal information is retained as long as necessary for purposes outlined in this privacy policy, including compliance with legal, regulatory, and advisory requirements. Data is securely deleted when no longer needed, following our data retention policy.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Your Rights:
 					</div>
 					<p>
 					    The Information Technology Act of 2000, along with its subsequent amendments, grants you certain rights concerning the personal information we hold about you. These rights include:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 					    <li>Requesting additional information regarding the use of your personal data.</li>
 					    <li>Obtaining a copy of the personal information we have on file for you.</li>
 					    <li>Correcting any inaccuracies in the personal information we maintain.</li>
@@ -219,13 +219,13 @@ export default function PrivacyPolicy() {
 					<p>
 					    In certain situations, we may need to restrict your rights to protect the public interest, such as in the prevention or detection of crime.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Contacting Us:
 					</div>
 					<p>
 					    We have designated a Grievance Officer to manage the handling of personal information. For any privacy-related concerns, you can contact our Grievance Officer using the details provided below:
 					</p>
-					<ul className="list-disc pl-[30px] sm:pl-[50px] py-[10px]">
+					<ul className="list-disc pl-[30px] sm:pl-[50px]">
 						<li>Name: Mr. Pritish Sahoo</li>
 						<li>Designation: Grievance Officer</li>
 						<li>Contact:</li>
@@ -234,17 +234,17 @@ export default function PrivacyPolicy() {
 							<li>Telephone: +91 93219 08755 (Operational Hours: Mon. to Fri. 10 am to 6 pm)</li>
 						</ul>
 					</ul>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Changes to Our Privacy Policy:
 					</div>
 					<p>
 					    Please note that we may update the content of our website or services without prior notice, which could result in changes to our privacy policy. We encourage you to review it periodically to stay informed about how we handle personal information.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Cookies Statement:
 					</div>
 					<p>
-					    Our website uses cookies to enhance your browsing experience by placing small files on your computer as you navigate different sections of <a href="https://www.taxbuddy.com/">https://www.taxbuddy.com/</a>.
+					    Our website uses cookies to enhance your browsing experience by placing small files on your computer as you navigate different sections of <a className="text-[blue]" href="/">https://wertconsultancy.in/</a>.
 					</p>
 					<p>
 					    Cookies allow us to display content aligned with your interests on specific pages and provide easier access to your account information.
@@ -261,7 +261,7 @@ export default function PrivacyPolicy() {
 					<p>
 					    Whether your web browser accepts cookies is entirely up to you. If your computer settings are not adjusted, your browser likely accepts cookies by default. Declining cookies may restrict your ability to access all website features. You can delete or disable cookies entirely in your browser settings, but this may significantly impact your website experience, making some sections non-functional or inaccessible.
 					</p>
-					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[20px] text-black">
+					<div className="text-[24px] sm:text-[30px] font-semibold mb-[5px] mt-[30px] text-black">
 						Miscellaneous:
 					</div>
 					<p>
