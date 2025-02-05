@@ -10,7 +10,7 @@ export default function RefundPolicy() {
 					    Cancellation and Refund Policy
 					</div>
 					<p>
-					    This document outlines Financial Crest Private Limited’s policy regarding cancellations and refunds for services provided through the Website (“Cancellation and Refund Policy”). Any capitalized terms used but not defined herein shall have the meaning assigned to them in the Terms of Use.
+					    This document outlines WERT Consultancy’s policy regarding cancellations and refunds for services provided through the Website (“Cancellation and Refund Policy”). Any capitalized terms used but not defined herein shall have the meaning assigned to them in the Terms of Use.
 					</p>
 					<div className="text-[24px] sm:text-[30px] font-semibold mb-[10px] mt-[30px] text-black">
 					    Cancellation and Refunds by the Company
