@@ -908,6 +908,9 @@ function Homepage() {
 							The Only Team Your Growing Business Need
 						</div>
 						<div className="pt-[30px] text-[18px] text-black" >
+							Accounting, Bookkeeping, Income Tax (ITR) and GST services for startups and small businesses.
+						</div>
+						<div className="pt-[30px] text-[18px] text-black" >
 							Whether you're a newly incorporated business or a profitable business looking to expand, our team has the expertise to handle your needs.
 						</div>
 					</div>
@@ -1010,16 +1013,23 @@ function Homepage() {
 				<div className="grid xl:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-[30px] text-center">
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] min-h-[60px]">
-							Start-up Registration & Compliance
+							Start-up & Trademark
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							<div>All-in-one Incorporation & compliance for:</div>
+							<div>We offer all-in-one incorporation and compliance services for Private Limited Companies, Partnerships, LLPs, Sole Proprietorships, and OPCs, including Startup India registration, DPIIT recognition, and trademark registration.</div>
 							<br />
-							<div>Private limited Company, Partnership, LLP Sole-Propreitor and OPC.</div>
+							<div>Our services cover key regulatory requirements such as issuing Director Identification Numbers (DIN), Digital Signatures (DSC), DIR-3 KYC, and filing annual returns with the Registrar of Companies (ROC) and Ministry of Corporate Affairs (MCA).</div>
+						</div>
+					</div>
+					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
+						<div className="font-semibold text-[20px] min-h-[60px]">
+							Start-up & Trademark
+						</div>
+						<div className="text-[#6b6b6b] mt-[10px]">
+							<div>
+								We provide end-to-end incorporation services for Private Limited Companies and LLPs, ensuring seamless compliance with the Registrar of Companies (ROC) and the Ministry of Corporate Affairs (MCA). Our expertise includes filing necessary compliances and assisting with applications or renewals of Director Identification Numbers (DIN), Digital Signatures (DSC), and DIR-3 KYC.</div>
 							<br />
-							<div>Startup India registration and DPIT recognition & Trademark registration.</div>
-							<br />
-							<div>Director Identification number (DIN), Digital signature (DSC), DIR-3 KYC and Annual return forms filing with ROC/MCA.</div>
+							<div>Additionally, we handle amendments to the Memorandum of Association (MOA) and Articles of Association (AOA), offer foreign investment advisory, and facilitate the conversion of physical shares to dematerialized (Demat) format. We also assist in claiming funds from the Investor Education and Protection Fund (IEPF), providing a comprehensive solution for all corporate needs.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
