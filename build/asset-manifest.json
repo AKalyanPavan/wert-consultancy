@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.72842f09.css",
-    "main.js": "/static/js/main.8d54ebe7.js",
+    "main.css": "/static/css/main.61422f9c.css",
+    "main.js": "/static/js/main.872d5470.js",
     "static/media/odoo.png": "/static/media/odoo.59313607ca76010e0781.png",
     "static/media/cleartax.png": "/static/media/cleartax.c06fe058d2527ab935d0.png",
     "static/media/intuit-quickbooks.png": "/static/media/intuit-quickbooks.32b16781ee03f352c2bf.png",
@@ -19,11 +19,11 @@
     "static/media/nithya-ragunathasamy.svg": "/static/media/nithya-ragunathasamy.f6755f36988625d75cfe215b9e7e7b54.svg",
     "index.html": "/index.html",
     "static/media/registration-icon.svg": "/static/media/registration-icon.e7d8677d23448a9532d3a48844ba55c7.svg",
-    "main.72842f09.css.map": "/static/css/main.72842f09.css.map",
-    "main.8d54ebe7.js.map": "/static/js/main.8d54ebe7.js.map"
+    "main.61422f9c.css.map": "/static/css/main.61422f9c.css.map",
+    "main.872d5470.js.map": "/static/js/main.872d5470.js.map"
   },
   "entrypoints": [
-    "static/css/main.72842f09.css",
-    "static/js/main.8d54ebe7.js"
+    "static/css/main.61422f9c.css",
+    "static/js/main.872d5470.js"
   ]
 }
