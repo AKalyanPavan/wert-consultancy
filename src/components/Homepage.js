@@ -980,20 +980,19 @@ function Homepage() {
 							Start-up & Trademark
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							<div>We offer all-in-one incorporation and compliance services for Private Limited Companies, Partnerships, LLPs, Sole Proprietorships, and OPCs, including Startup India registration, DPIIT recognition, and trademark registration.</div>
+							<div>We offer comprehensive business structure planning and formation services, specializing in Startup India registration, MSME certification, and DPIIT recognition for 80IAC tax exemption benefits. Our expertise extends to complete trademark registration and protection, including professional support for infringement notices with dedicated legal assistance.</div>
 							<br />
-							<div>Our services cover key regulatory requirements such as issuing Director Identification Numbers (DIN), Digital Signatures (DSC), DIR-3 KYC, and filing annual returns with the Registrar of Companies (ROC) and Ministry of Corporate Affairs (MCA).</div>
+							<div>We ensure full FEMA compliance through meticulous FCGPR/FCTRS filing, establishing your business on solid legal footing from inception. Our all-inclusive approach covers every aspect of startup formalities, allowing you to focus on building your business while we handle the regulatory framework.</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
 						<div className="font-semibold text-[20px] min-h-[60px]">
-							Start-up & Trademark
+							Corporate Compliances
 						</div>
 						<div className="text-[#6b6b6b] mt-[10px]">
-							<div>
-								We provide end-to-end incorporation services for Private Limited Companies and LLPs, ensuring seamless compliance with the Registrar of Companies (ROC) and the Ministry of Corporate Affairs (MCA). Our expertise includes filing necessary compliances and assisting with applications or renewals of Director Identification Numbers (DIN), Digital Signatures (DSC), and DIR-3 KYC.</div>
+							<div>We provide end-to-end incorporation services for Private Limited Companies and LLPs, ensuring seamless compliance with the Registrar of Companies (ROC) and the Ministry of Corporate Affairs (MCA). Our expertise includes filing necessary compliances and assisting with applications or renewals of Director Identification Numbers (DIN), Digital Signatures (DSC), and DIR-3 KYC.</div>
 							<br />
-							<div>Additionally, we handle amendments to the Memorandum of Association (MOA) and Articles of Association (AOA), offer foreign investment advisory, and facilitate the conversion of physical shares to dematerialized (Demat) format. We also assist in claiming funds from the Investor Education and Protection Fund (IEPF), providing a comprehensive solution for all corporate needs.</div>
+							<div>Additionally, we handle amendments to the Memorandum of Association (MOA) and Articles of Association (AOA), offer foreign investment advisory, and facilitate share transfers, transmissions, and lost certificate recovery. We also manage physical to demat conversions and assist in claiming funds from the Investor Education and Protection Fund (IEPF).</div>
 						</div>
 					</div>
 					<div className="border-solid border-[1px] border-[#e6e6e6] px-[30px] py-[30px] rounded-[10px]">
